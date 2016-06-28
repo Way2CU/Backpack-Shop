@@ -1,0 +1,66 @@
+<document>
+  <cms:svg file="site-sprite.svg"/>
+  <header>
+    <div>
+      <!-- Main menu -->
+      <cms:template file="parts/main_menu.xml"/>
+
+      <!-- Search form -->
+      <form action="url_Make('', 'search')" method="get" cms:eval="action">
+        <label>
+          <input type="search" name="query"/>
+        </label>
+        <button type="submit">
+          <cms:svg file="site-sprite.svg" symbol="search"/>
+        </button>
+      </form>
+
+      <a href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" class="share">
+        <cms:text constant="label_share"/>
+        <cms:svg file="site-sprite.svg" symbol="facebook"/>
+      </a>
+
+      <!-- Language menu -->
+      <nav id="language">
+        <cms:module
+          name="language_menu"
+          action="print"
+          />
+      </nav>
+
+      <cms:guest>
+        <a class="login" href="#">
+          <cms:svg file="site-sprite.svg" symbol="user"/>
+          <cms:text constant="menu_login"/>
+        </a>
+        <a class="sign-up" href="#">
+          <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+          <cms:text constant="menu_signup"/>
+        </a>
+      </cms:guest>
+
+      <cms:user>
+        <a
+          class="control_panel"
+          href="url_Make('', 'user')"
+          cms:eval="href"
+          >
+          <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+          <cms:text constant="menu_account"/>
+        </a>
+        <a class="logout" href="#">
+          <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+          <cms:text constant="menu_logout"/>
+        </a>
+      </cms:user>
+    </div>
+
+    <!-- Shop categories menu -->
+    <nav id="categories">
+      <cms:template file="parts/shop_categories.xml"/>
+    </nav>
+
+    <!-- shopping cart -->
+    <cms:template file="stock/cart.xml"/>
+  </header>
+</document>
