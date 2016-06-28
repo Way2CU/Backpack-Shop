@@ -5,3 +5,43 @@
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
  * Authors: Tal Reznic
  */
+
+header {
+  position: fixed;
+  top: 50px;
+  left: calc(~'(50% - 600px)');
+  width: 1200px;
+  background-color: @color_bright_text;
+  z-index: 100000;
+}
+
+header svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2em;
+  height: 2em;
+  fill: currentColor;
+}
+
+header > div {
+  background-color: @color_background;
+  border: 1px solid red;
+  color: @color_bright_text;
+}
+
+header form,
+header form label,
+nav#main,
+nav#language,
+header a.share {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/**
+ * Drop down menu
+ */
+
+nav#main div.drop_down {
+  display: none;
+}
