@@ -26,35 +26,39 @@ header svg {
 
 header > div {
   background-color: @color_background;
-  border: 1px solid @color_bright_text;
   border-bottom: none;
-  overflow: hidden;
 }
 
 nav#language a,
 header > div > a {
+  display: inline-block;
   text-decoration: none;
-  padding: 1.5em 1em;
+  padding: 1em 2em;
   color: @color_bright_text;
   transition: all 0.3s;
 }
 
+nav#language a {
+  padding: 1.2em 2em;
+}
+
 nav#language a:hover,
 header > div > a:hover {
-  background-color: @color_highlight;
+  background-color: @color_attention;
 }
 
 nav#main {
   display: inline-block;
   vertical-align: middle;
   padding: 1em 1em;
-  background-color: @color_highlight;
+  cursor: pointer;
+  position: relative;
 }
 
 form {
   display: inline-block;
   vertical-align: middle;
-  margin: 0em 1em;
+  margin: 0em 2em;
   line-height: 100%;
 }
 
@@ -67,6 +71,12 @@ form label input {
   vertical-align: top;
   padding: 0.4em 0.2em;
   border: 1px solid lighten(@color_background, 50%);
+  width: 100px;
+  transition: all 0.5s;
+}
+
+form label input:focus {
+  width: 200px;
 }
 
 form button {
@@ -91,5 +101,32 @@ nav#language {
  * Drop down menu
  */
 nav#main div.drop_down {
-  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 15px fade(@color_background, 50%);
+  width: 300px;
+  max-height: 0px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+html[dir="rtl"] nav#main div.drop_down {
+  right: 0;
+  left: auto;
+}
+
+nav#main div.drop_down a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  color: @color_text;
+  border-bottom: 1px solid @color_text;
+  transition: all 0.3s;
+}
+
+nav#main div.drop_down a:hover {
+  background-color: @color_attention;
+  color: @color_bright_text;
 }

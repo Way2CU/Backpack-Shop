@@ -40,7 +40,7 @@
         cms:eval="href"
         cms:optional="class"
         >
-        <cms:text constant="menu_warrenty_agreement"/>
+        <cms:text constant="menu_warranty_agreement"/>
       </a>
       <a
         class="$section == 'about' ? 'active' : false"
