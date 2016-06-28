@@ -1,0 +1,55 @@
+<document>
+  <nav id="main">
+    <cms:svg file="site-sprite.svg" symbol="menu"/>
+    <div class="drop_down">
+      <a
+        class="$section == 'home' ? 'active' : false"
+        href="url_Make('', 'home')"
+        cms:eval="href"
+        cms:optional="class"
+        >
+        <cms:text constant="menu_home"/>
+      </a>
+      <a
+        class="$section == 'about' ? 'active' : false"
+        href="url_Make('', 'about')"
+        cms:eval="href"
+        cms:optional="class"
+        >
+        <cms:text constant="menu_about"/>
+      </a>
+      <a
+        class="$section == 'about' ? 'active' : false"
+        href="url_Make('contact-us', 'about')"
+        cms:eval="href"
+        cms:optional="class"
+        >
+        <cms:text constant="menu_contact_us"/>
+      </a>
+      <a
+        class="$section == 'about' ? 'active' : false"
+        href="url_Make('terms-of-use', 'about')"
+        cms:eval="href"
+        cms:optional="class"
+        >
+        <cms:text constant="menu_terms_of_use"/>
+      </a>
+      <a
+        class="$section == 'about' ? 'active' : false"
+        href="url_Make('warrenty-agreement', 'about')"
+        cms:eval="href"
+        cms:optional="class"
+        >
+        <cms:text constant="menu_warrenty_agreement"/>
+      </a>
+      <a
+        class="$section == 'about' ? 'active' : false"
+        href="url_Make('shipping-policy', 'about')"
+        cms:eval="href"
+        cms:optional="class"
+        >
+        <cms:text constant="menu_shipping_policy"/>
+      </a>
+    </div>
+  </nav>
+</document>
