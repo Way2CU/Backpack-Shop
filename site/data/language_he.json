@@ -1,3 +1,12 @@
 {
-    "site_title": "Backpack Site"
+    "site_title": "Backpack Site",
+    "menu_home": "עמוד הבית",
+    "menu_about": "אודותינו",
+    "menu_contact_us": "צור קשר",
+    "menu_terms_of_use": "תקנון רכישה באתר",
+    "menu_warranty_agreement": "הסכם אחריות",
+    "menu_shipping_policy": "מדיניות משלוחים",
+    "menu_signup": "הרשמה לאתר",
+    "menu_login": "כניסה",
+    "label_share": "Share"
 }
