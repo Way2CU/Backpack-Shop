@@ -45,11 +45,11 @@
           href="url_Make('', 'user')"
           cms:eval="href"
           >
-          <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+          <cms:svg file="site-sprite.svg" symbol="cog"/>
           <cms:text constant="menu_account"/>
         </a>
         <a class="logout" href="#">
-          <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+          <cms:svg file="site-sprite.svg" symbol="enter"/>
           <cms:text constant="menu_logout"/>
         </a>
       </cms:user>
