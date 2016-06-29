@@ -52,14 +52,6 @@ header > div > a:hover {
   background-color: @color_attention;
 }
 
-nav#main {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 1em 1em;
-  cursor: pointer;
-  position: relative;
-}
-
 form {
   display: inline-block;
   vertical-align: middle;
@@ -100,6 +92,19 @@ form button:hover {
 /**
  * Drop down menu
  */
+nav#main {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 1em 1em;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+}
+
+nav#main:hover {
+  background-color: @color_attention;
+}
+
 nav#main div.drop_down {
   position: absolute;
   left: 0;
