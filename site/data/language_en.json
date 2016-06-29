@@ -11,5 +11,6 @@
     "menu_account": "My account",
     "menu_logout": "Log out",
     "label_share": "Share",
-    "title_cart": "Cart items"
+    "title_cart": "Cart items",
+    "buy_now": "Order now:"
 }
