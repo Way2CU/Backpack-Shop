@@ -8,5 +8,7 @@
     "menu_shipping_policy": "מדיניות משלוחים",
     "menu_signup": "הרשמה לאתר",
     "menu_login": "כניסה",
+    "menu_account": "החשבון שלי",
+    "menu_logout": "יציאה",
     "label_share": "Share"
 }
