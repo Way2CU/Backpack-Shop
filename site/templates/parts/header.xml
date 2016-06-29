@@ -57,7 +57,11 @@
 
     <!-- Shop categories menu -->
     <nav id="categories">
-      <cms:template file="parts/shop_categories.xml"/>
+      <cms:module
+        name="shop"
+        action="show_category_list"
+        template="parts/shop_category_links.xml"
+        />
     </nav>
 
     <!-- shopping cart -->
