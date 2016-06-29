@@ -8,10 +8,11 @@
 
 header {
   position: fixed;
-  top: 50px;
+  top: 25px;
   left: calc(~'(50% - 600px)');
   width: 1200px;
-  background-color: @color_bright_text;
+  background-color: fade(@color_bright_text, 80%);
+  box-shadow: 0px 2px 25px fade(@color_background, 50%);
   z-index: 100000;
 }
 
@@ -27,6 +28,7 @@ header svg {
 header > div {
   background-color: @color_background;
   border-bottom: none;
+  line-height: 100%;
 }
 
 nav#language {
@@ -44,7 +46,7 @@ header > div > a {
 }
 
 nav#language a {
-  padding: 1.2em 2em;
+  padding: 1.25em 2em;
 }
 
 nav#language a:hover,
@@ -181,7 +183,7 @@ div.cart {
   vertical-align: middle;
   padding: 0.5em;
   float: right;
-  background-color: inherit;
+  background-color: transparent;
   position: relative;
 }
 
@@ -211,7 +213,7 @@ ul#products {
   padding: 0;
   list-style-type: none;
   width: 600px;
-  background-color: @color_bright_text;
+  background-color: fade(@color_bright_text, 80%);
   box-shadow: 0px 2px 15px fade(@color_background, 50%);
   transform: rotateX(-90deg);
   transform-style: preserve-3d;
