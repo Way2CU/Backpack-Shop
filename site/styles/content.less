@@ -142,13 +142,26 @@ div#slider a:hover span.triangle:after {
   right: 0%;
 }
 
+div#slider a.active span.triangle:before {
+  left: 0%;
+  width: 2em;
+  height: 2em;
+}
+
+div#slider a.active span.triangle:after {
+  right: 0%;
+  width: 2em;
+  height: 2em;
+}
+
 /**
  * Product
  */
 a.product {
   display: inline-block;
   vertical-align: top;
-  margin-bottom: 12.5px;
+  margin-bottom: 6.25px;
+  margin-top: 6.25px;
   text-align: center;
   text-decoration: none;
   padding: 1em;
@@ -190,6 +203,10 @@ a.product p:after {
   content: attr(data-currency);
   display: inline-block;
   padding: 0em 0.2em;
+}
+
+a.product img {
+  padding: 0.5em;
 }
 
 /**
