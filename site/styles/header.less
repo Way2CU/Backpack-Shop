@@ -99,14 +99,17 @@ nav#main {
   cursor: pointer;
   position: relative;
   transition: all 0.3s;
+  transition-delay: 0.3s;
 }
 
-nav#main:hover {
+nav#main.show {
   background-color: @color_attention;
+  transition-delay: 0s;
 }
 
 nav#main div.drop_down {
   position: absolute;
+  padding: 0.3em;
   left: 0;
   top: 100%;
   background-color: white;
@@ -115,6 +118,13 @@ nav#main div.drop_down {
   max-height: 0px;
   opacity: 0;
   visibility: hidden;
+  transition: all 0.3s;
+}
+
+nav#main.show div.drop_down {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
 }
 
 html[dir="rtl"] nav#main div.drop_down {
@@ -127,7 +137,7 @@ nav#main div.drop_down a {
   padding: 1em;
   text-decoration: none;
   color: @color_text;
-  border-bottom: 1px solid @color_text;
+  border-bottom: 1px solid lighten(@color_text, 70%);
   transition: all 0.3s;
 }
 
