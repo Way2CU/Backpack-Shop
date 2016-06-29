@@ -45,12 +45,23 @@ Site.is_mobile = function() {
 	return result;
 };
 
+/*
+ * Handle clicking on nav#main
+ */
+Site.handle_menu_click = function(event) {
+	this.classList.toggle('show');
+}
+
 /**
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
 	if (Site.is_mobile())
 		Site.mobile_menu = new Caracal.MobileMenu();
+
+	// create function to open drop down menu
+	var menu = document.getElementById('main');
+	menu.addEventListener('click', Site.handle_menu_click);
 };
 
 
