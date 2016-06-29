@@ -2,5 +2,18 @@
 <!DOCTYPE document SYSTEM "../../../units/schema/language.dtd">
 <document>
 	<div class="cart">
+    <cms:svg file="site-sprite.svg" symbol="cart"/>
+    <cms:text constant="title_cart"/>
+    <span class="products_count">3</span>
+
+    <!-- List of product items -->
+    <ul id="products">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
 	</div>
 </document>
