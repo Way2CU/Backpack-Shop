@@ -148,10 +148,9 @@ div#slider a:hover span.triangle:after {
 a.product {
   display: inline-block;
   vertical-align: top;
+  margin-bottom: 12.5px;
   text-align: center;
   text-decoration: none;
-  margin-right: 5px;
-  margin-left: 5px;
   padding: 1em;
   box-sizing: border-box;
   width: 230px;
@@ -159,6 +158,23 @@ a.product {
   background-color: @color_bright_text;
   position: relative;
   transition: all 0.3s;
+}
+
+a.product:nth-child(1n) {
+  margin-right: 12.5px;
+}
+
+html[dir="rtl"] a.product:nth-child(1n) {
+  margin-right: 0;
+  margin-left: 12.5px;
+}
+
+a.product:nth-child(5n) {
+  margin-right: 0;
+}
+
+html[dir="rtl"] a.product:nth-child(5n) {
+  margin-left: 0;
 }
 
 a.product p,
