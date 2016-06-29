@@ -5,6 +5,7 @@
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
 			<title><cms:text constant="site_title"/></title>
+			<cms:collection include="page_control"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
@@ -12,10 +13,23 @@
 			<!-- Top section of site -->
 			<cms:template file="parts/header.xml"/>
 
-			<!-- Home page content -->
+			<!-- Home page top section -->
 			<div class="intro">
 				<h1><cms:text constant="title_header_slogan"/></h1>
 			</div>
+
+			<section>
+				<div id="slider">
+					<!--Slider images and controls-->
+					<cms:module
+						name="gallery"
+						action="show_image_list"
+						group="slider_images"
+						limit="3"
+						template="parts/slider.xml"
+						/>
+				</div>
+			</section>
 		</body>
 	</html>
 </document>

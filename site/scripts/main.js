@@ -62,6 +62,12 @@ Site.on_load = function() {
 	// create function to open drop down menu
 	var menu = document.getElementById('main');
 	menu.addEventListener('click', Site.handle_menu_click);
+
+	// create pagecontrol for home page slider
+	Site.slider = new PageControl('div#slider', 'img');
+	Site.slider
+		.setWrapAround(true)
+		.attachControls('div#slider a');
 };
 
 

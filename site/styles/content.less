@@ -6,6 +6,10 @@
  * Authors: Tal Reznic
  */
 
+section {
+  padding: 2em calc(~'(100% - 1200px)' / 2);
+}
+
 /**
  * Home page
  */
@@ -29,4 +33,109 @@ div.intro h1 {
   font-weight: 400;
   font-size: 3em;
   width: 700px;
+}
+
+div#slider {
+  position: relative;
+  height: 300px;
+}
+
+div#slider img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 900px;
+  height: 300px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+div#slider img.visible {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+html[dir="rtl"] div#slider img {
+  right: auto;
+  left: 0;
+}
+
+div#slider a {
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  text-align: center;
+  width: 300px;
+  height: 100px;
+  color: @color_bright_text;
+  background-color: @color_text;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+div#slider a:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+div#slider a:nth-of-type(2) {
+  background-color: @color_ac_grey;
+}
+
+div#slider a:nth-of-type(3) {
+  background-color: @color_ac_bright_grey;
+}
+
+div#slider a span {
+  display: inline-block;
+}
+
+div#slider a span:after,
+div#slider a span:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  width: 4em;
+  height: 4em;
+  background-image: linear-gradient(135deg, @color_hover 49%, transparent 49%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+div#slider a span:after {
+  top: auto;
+  bottom: 0%;
+  left: auto;
+  right: -100%;
+  width: 4em;
+  height: 4em;
+  background-image: linear-gradient(-45deg, @color_hover 49%, transparent 49%);
+  transition: all 0.3s;
+}
+
+div#slider a.active span:before {
+  left: 0%;
+  width: 2em;
+  height: 2em;
+}
+
+div#slider a:hover span:before {
+  left: 0%;
+}
+
+div#slider a.active span:after {
+  right: 0%;
+  width: 2em;
+  height: 2em;
+}
+
+div#slider a:hover span:after {
+  right: 0%;
 }
