@@ -12,7 +12,7 @@
       </a>
       <a
         class="$section == 'about' ? 'active' : false"
-        href="url_Make('', 'about')"
+        href="url_Make('_default', 'about')"
         cms:eval="href"
         cms:optional="class"
         >
