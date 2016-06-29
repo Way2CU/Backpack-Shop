@@ -20,7 +20,7 @@
 
 			<section>
 				<div id="slider">
-					<!--Slider images and controls-->
+					<!-- Slider images and controls -->
 					<cms:module
 						name="gallery"
 						action="show_image_list"
@@ -29,6 +29,16 @@
 						template="parts/slider.xml"
 						/>
 				</div>
+			</section>
+
+				<!-- Promoted products -->
+			<section class="promoted">
+				<cms:module
+					name="shop"
+					action="show_item_list"
+					category="dakine"
+					template="parts/category_products.xml"
+					/>
 			</section>
 		</body>
 	</html>

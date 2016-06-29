@@ -96,6 +96,8 @@ div#slider a span {
   display: inline-block;
 }
 
+a.product:after,
+a.product:before,
 div#slider a span:after,
 div#slider a span:before {
   content: "";
@@ -109,6 +111,7 @@ div#slider a span:before {
   z-index: -1;
 }
 
+a.product:after,
 div#slider a span:after {
   top: auto;
   bottom: 0%;
@@ -126,6 +129,7 @@ div#slider a.active span:before {
   height: 2em;
 }
 
+a.product:hover:before,
 div#slider a:hover span:before {
   left: 0%;
 }
@@ -136,6 +140,43 @@ div#slider a.active span:after {
   height: 2em;
 }
 
+a.product:hover:after,
 div#slider a:hover span:after {
   right: 0%;
+}
+
+/**
+ * Product
+ */
+a.product {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 230px;
+  color: @color_text;
+  background-color: @color_bright_text;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s;
+  z-index: 0;
+}
+
+a.product p,
+a.product h4 {
+  margin: 0;
+}
+
+a.product p {
+  color: @color_ac_bright_grey;
+}
+
+a.product p:after {
+  content: attr(data-currency);
+  display: inline-block;
+  padding: 0em 0.2em;
 }

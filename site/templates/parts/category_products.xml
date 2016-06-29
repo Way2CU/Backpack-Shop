@@ -1,0 +1,15 @@
+<document>
+  <a class="product" href="url_make('product', 'shop', array('id', $params['id']))" cms:eval="href">
+    <img 
+      src="gallery::getGroupThumbnailById($params['gallery'], null, 200, Thumbnail::CONSTRAIN_BOTH)" 
+      alt="$params['name'][$language]"
+      cms:eval="src,alt"
+      />
+    <h4><cms:var param="name" multilanguage="yes"/></h4>
+    <p data-currency="shop::getDefaultCurrency()" cms:eval="data-currency">
+      <cms:text constant="buy_now"/>
+      <cms:raw text=" "/>
+      <cms:var param="price"/>
+    </p>
+  </a>
+</document>
