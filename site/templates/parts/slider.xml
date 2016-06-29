@@ -1,6 +1,8 @@
 <document>
   <a href="javascript:void(0)">
-    <span><cms:var param="title" multilanguage="yes"/></span>
+    <span class="triangle">
+      <cms:var param="title" multilanguage="yes"/>
+    </span>
   </a>
   <img 
     src="gallery::getThumbnailById($params['id'], null, 900, Thumbnail::CONSTRAIN_BOTH)"

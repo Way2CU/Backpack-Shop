@@ -1,5 +1,5 @@
 <document>
-  <a class="product" href="url_make('product', 'shop', array('id', $params['id']))" cms:eval="href">
+  <a class="product triangle" href="url_make('product', 'shop', array('id', $params['id']))" cms:eval="href">
     <img 
       src="gallery::getGroupThumbnailById($params['gallery'], null, 200, Thumbnail::CONSTRAIN_BOTH)" 
       alt="$params['name'][$language]"
