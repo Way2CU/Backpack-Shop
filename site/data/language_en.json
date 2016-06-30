@@ -12,5 +12,7 @@
     "menu_logout": "Log out",
     "label_share": "Share",
     "title_cart": "Cart items",
-    "buy_now": "Order now:"
+    "buy_now": "Order now:",
+    "copyright_holder": "Copyright &copy; 2016. by <a href=\"http://way2cu.com\" target=\"_blank\">Way2CU</a>.",
+    "copyright_text": "All rights reserved."
 }

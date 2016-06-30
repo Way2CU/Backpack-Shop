@@ -2,6 +2,16 @@
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
 	<footer>
-		<cms:template file="stock/copyright.xml"/>
+    <div class="top">
+      <h2>
+        <cms:svg file="site-sprite.svg" symbol="logo-black"/>
+        <cms:text constant="title_footer_slogan"/>
+      </h2>
+    </div>
+    <cms:template file="stock/copyright.xml">
+      <param name="holder" value="copyright_holder"/>
+      <param name="text" value="copyright_text"/>
+      <param name="light" value="1"/>
+    </cms:template>
 	</footer>
 </document>
