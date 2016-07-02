@@ -8,7 +8,7 @@
       <!-- Search form -->
       <form action="url_Make('', 'search')" method="get" cms:eval="action">
         <label>
-          <input type="search" name="query"/>
+          <input type="search" placeholder="label_search" name="query" cms:constant="placeholder"/>
         </label>
         <button type="submit">
           <cms:svg file="site-sprite.svg" symbol="search"/>
