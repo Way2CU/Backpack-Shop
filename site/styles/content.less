@@ -175,20 +175,20 @@ a.product {
   transition: all 0.3s;
 }
 
-a.product:nth-child(1n) {
+a.product:nth-of-type(1n) {
   margin-right: 12.5px;
 }
 
-html[dir="rtl"] a.product:nth-child(1n) {
+html[dir="rtl"] a.product:nth-of-type(1n) {
   margin-right: 0;
   margin-left: 12.5px;
 }
 
-a.product:nth-child(5n) {
+a.product:nth-of-type(5n) {
   margin-right: 0;
 }
 
-html[dir="rtl"] a.product:nth-child(5n) {
+html[dir="rtl"] a.product:nth-of-type(5n) {
   margin-left: 0;
 }
 
@@ -289,4 +289,22 @@ ul#features li svg {
   width: 4em;
   height: 4em;
   fill: @color_text;
+}
+
+/**
+ * Category page
+ */
+section.category {
+  padding-top: 140px;
+  background-image: url(../images/header-inner.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  min-height: 700px;
+}
+
+section.category h2 {
+  text-align: center;
+  color: @color_bright_text;
+  font-size: 3em;
+  text-transform: uppercase;
 }
