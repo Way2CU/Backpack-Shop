@@ -1,5 +1,10 @@
 <document>
-  <a href="url_Make('category', 'shop', array('id', $params['id']))" cms:eval="href">
+  <a 
+    href="url_Make('category', 'shop', array('id', $params['id']))"
+    class="(isset($_REQUEST['id']) and $_REQUEST['id'] == $params['id']) ? 'active' : false"
+    cms:optional="class"
+    cms:eval="href"
+    >
     <cms:var param="title" multilanguage="yes"/>
   </a>
 </document>
