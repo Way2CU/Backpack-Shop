@@ -45,6 +45,36 @@
   right: 0%;
 }
 
+.action {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  color: @color_text;
+  font-weight: 700;
+  background-color: @color_hover;
+  transition: all 0.3s;
+}
+
+.action:hover {
+  background-color: @color_attention;
+  color: @color_bright_text;
+}
+
+.action svg {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0em 0.2em;
+  width: 1.5em;
+  height: 1.5em;
+  fill: @color_text;
+  transition: all 0.3s;
+}
+
+.action:hover svg {
+  fill: @color_bright_text;
+}
+
 section {
   padding: 1em calc(~'(100% - 1200px)' / 2);
 }
@@ -294,6 +324,7 @@ ul#features li svg {
 /**
  * Category page
  */
+section.product_details,
 section.category {
   padding-top: 140px;
   background-image: url(../images/header-inner.jpg);
@@ -302,9 +333,101 @@ section.category {
   min-height: 700px;
 }
 
+section.product_details {
+  min-height: auto;
+}
+
 section.category h2 {
   text-align: center;
   color: @color_bright_text;
   font-size: 3em;
   text-transform: uppercase;
 }
+
+/**
+ * Product details
+ */
+div.gallery,
+div.detail {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1.5em;
+  box-sizing: border-box;
+  border: 1px solid fade(@color_bright_text, 30%);
+  width: 50%;
+  position: relative;
+  min-height: 550px;
+}
+
+div.gallery {
+  background-color: @color_bright_text;
+}
+
+div.thumbnails {
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.thumbnails img {
+  display: block;
+  padding: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+div.thumbnails img:hover {
+  border: 1px solid @color_hover;
+}
+
+div.gallery img.big_image {
+  position: absolute;
+  top: 50%;
+  margin-top: -150px;
+  right: 1.5em;
+}
+
+html[dir="rtl"] div.gallery img.big_image {
+  right: auto;
+  left: 1.5em;
+}
+
+div.detail {
+  background-color: @color_text;
+  color: @color_bright_text;
+}
+
+div.detail h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+  color: @color_hover;
+  font-size: 2.5em;
+}
+
+div.detail span.price {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+div.detail span.price:after {
+  content: attr(data-currency);
+  display: inline-block;
+  padding: 0em 0.2em;
+}
+
+div.detail a.action.buy {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/**
+ * Related items
+ */
+section.related_items h3 {
+  margin-top: 0;
+  text-align: center;
+  color: @color_bright_text;
+}
+
