@@ -13,6 +13,28 @@
       <!-- Top section of site -->
       <cms:template file="parts/header.xml"/>
 
+      <!-- Product details -->
+      <section class="product_details">
+        <cms:module
+          name="shop"
+          action="show_item"
+          id="fix_id($_REQUEST['id'])"
+          template="parts/product_details.xml"
+          cms:eval="id"
+          />
+      </section>
+
+      <section class="related_items">
+        <h3><cms:text constant="title_related_items"/></h3>
+        <cms:module
+          name="shop"
+          action="show_item_list"
+          related="fix_id($_REQUEST['id'])"
+          template="parts/category_products.xml"
+          cms:eval="related"
+          />
+      </section>
+
       <!-- Bottom section of the site -->
       <cms:template file="parts/footer.xml"/>
     </body>
