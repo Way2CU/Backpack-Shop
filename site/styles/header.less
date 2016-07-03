@@ -176,9 +176,13 @@ nav#categories a {
   transition: all 0.3s;
 }
 
-nav#categories a.active,
 nav#categories a:hover {
   background-color: @color_hover;
+}
+
+nav#categories a.active {
+  background-color: @color_attention;
+  color: @color_bright_text;
 }
 
 /**
