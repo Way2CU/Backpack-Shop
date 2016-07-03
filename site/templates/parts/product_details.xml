@@ -1,0 +1,51 @@
+<document>
+  <!-- Product images gallery -->
+  <div class="gallery">
+    <!-- Thumbnail images -->
+    <div class="thumbnails">
+      <cms:module
+        name="gallery"
+        action="show_image_list"
+        group_id="$params['gallery']"
+        template="parts/product_images.xml"
+        cms:eval="group_id"
+        >
+        <param name="thumbnail_image" value=""/>
+      </cms:module>
+    </div>
+    <!-- Big image -->
+      <cms:module
+        name="gallery"
+        action="show_image_list"
+        group_id="$params['gallery']"
+        template="parts/product_images.xml"
+        cms:eval="group_id"
+        >
+        <param name="big_image" value=""/>
+      </cms:module>
+  </div>
+
+  <!-- Product information -->
+  <div class="detail" data-uid="$params['uid']" cms:eval="data-uid">
+    <!-- Product name -->
+    <h2><cms:var param="name" multilanguage="yes"/></h2>
+    <!-- Product price -->
+    <span class="price" data-currency="shop::getDefaultCurrency()" cms:eval="data-currency">
+      <cms:text constant="label_price"/>
+      <cms:var param="price"/>
+    </span>
+    <br/>
+    <!-- Product description -->
+    <cms:markdown param="description" multilanguage="yes"/>
+    <!-- Add to cart button -->
+    <a href="javascript:void(0)" class="action">
+      <cms:text constant="button_add_to_cart"/>
+      <cms:svg file="site-sprite.svg" symbol="cart_add"/>
+    </a>
+    <!-- Buy now button -->
+    <a href="url_Make('checkout','shop')" class="action buy" cms:eval="href">
+      <cms:text constant="buy_now"/>
+      <cms:svg file="site-sprite.svg" symbol="cart_add"/>
+    </a>
+  </div>
+</document>
