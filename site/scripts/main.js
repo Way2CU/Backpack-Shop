@@ -53,6 +53,20 @@ Site.handle_menu_click = function(event) {
 }
 
 /**
+ * Handle product thumbnail click event
+ */
+Site.handle_product_thumbnail = function(event) {
+	var index = event.target.dataset.index;
+	var big_images = document.querySelectorAll('img.big_image');
+	
+	for (var i=0, count=big_images.length; i<count; i++) {
+		if (index == i)
+			big_images[i].classList.add('visible'); else
+			big_images[i].classList.remove('visible');
+	}
+}
+
+/**
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
@@ -68,6 +82,14 @@ Site.on_load = function() {
 	Site.slider
 		.setWrapAround(true)
 		.attachControls('div#slider a');
+
+	// create function for rotating product big image
+	var product_thumbnails = document.querySelectorAll('img.thumbnail');
+	var big_image = document.querySelectorAll('img.big_image')[0].classList.add('visible');
+	for (var i = 0, count = product_thumbnails.length; i<count; i++) {
+		product_thumbnails[i].dataset.index = i;
+		product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
+	}
 };
 
 
