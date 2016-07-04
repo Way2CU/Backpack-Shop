@@ -27,6 +27,7 @@
 
   <!-- Product information -->
   <div class="detail" data-uid="$params['uid']" cms:eval="data-uid">
+    
     <div class="information">
       <!-- Product name -->
       <h2><cms:var param="name" multilanguage="yes"/></h2>
@@ -49,6 +50,7 @@
         <cms:svg file="site-sprite.svg" symbol="cart_add"/>
       </a>
     </div>
+
     <!-- Product properties (pvc, laptop, skate) -->
     <div class="properties">
       <cms:module
