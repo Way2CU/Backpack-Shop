@@ -181,8 +181,9 @@ nav#categories a:hover {
 }
 
 nav#categories a.active {
-  background-color: @color_attention;
-  color: @color_bright_text;
+  background-color: @color_hover;
+  text-decoration: underline;
+  color: @color_text;
 }
 
 /**
@@ -194,7 +195,12 @@ div.cart {
   padding: 0.5em;
   float: right;
   background-color: transparent;
+  transition: all 0.3s;
   position: relative;
+}
+
+div.cart:hover {
+  background-color: @color_hover;
 }
 
 html[dir="rtl"] div.cart {
