@@ -15,32 +15,7 @@
         </button>
       </form>
 
-      <cms:guest>
-        <a class="login" href="#">
-          <cms:svg file="site-sprite.svg" symbol="user"/>
-          <cms:text constant="menu_login"/>
-        </a>
-        <a class="sign-up" href="#">
-          <cms:svg file="site-sprite.svg" symbol="sign-up"/>
-          <cms:text constant="menu_signup"/>
-        </a>
-      </cms:guest>
-
-      <cms:user>
-        <a
-          class="control_panel"
-          href="url_Make('', 'user')"
-          cms:eval="href"
-          >
-          <cms:svg file="site-sprite.svg" symbol="cog"/>
-          <cms:text constant="menu_account"/>
-        </a>
-        <a class="logout" href="#">
-          <cms:svg file="site-sprite.svg" symbol="enter"/>
-          <cms:text constant="menu_logout"/>
-        </a>
-      </cms:user>
-
+      <!-- Share link -->
       <a href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" class="share">
         <cms:text constant="label_share"/>
         <cms:svg file="site-sprite.svg" symbol="facebook"/>
@@ -53,6 +28,34 @@
           action="print"
           />
       </nav>
+      <!-- User form -->
+      <div class="user">
+        <cms:guest>
+          <a class="login" href="#">
+            <cms:svg file="site-sprite.svg" symbol="user"/>
+            <cms:text constant="menu_login"/>
+          </a>
+          <a class="sign-up" href="#">
+            <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+            <cms:text constant="menu_signup"/>
+          </a>
+        </cms:guest>
+
+        <cms:user>
+          <a
+            class="control_panel"
+            href="url_Make('', 'user')"
+            cms:eval="href"
+            >
+            <cms:svg file="site-sprite.svg" symbol="cog"/>
+            <cms:text constant="menu_account"/>
+          </a>
+          <a class="logout" href="#">
+            <cms:svg file="site-sprite.svg" symbol="enter"/>
+            <cms:text constant="menu_logout"/>
+          </a>
+        </cms:user>
+      </div>
     </div>
 
     <!-- Shop categories menu -->
