@@ -7,8 +7,6 @@
       />
     <h4><cms:var param="name" multilanguage="yes"/></h4>
     <p data-currency="shop::getDefaultCurrency()" cms:eval="data-currency">
-      <cms:text constant="buy_now"/>
-      <cms:raw text=" "/>
       <cms:var param="price"/>
     </p>
   </a>
