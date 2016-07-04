@@ -1,0 +1,13 @@
+<document>
+  <cms:if condition="$params['text_id'] == 'pvc'">
+    <cms:svg file="site-sprite.svg" symbol="$params['text_id']" cms:eval="symbol"/>
+  </cms:if>
+
+  <cms:if condition="$params['text_id'] == 'laptop'">
+    <cms:svg file="site-sprite.svg" symbol="$params['text_id']" cms:eval="symbol"/>
+  </cms:if>
+
+  <cms:if condition="$params['text_id'] == 'skate'">
+    <cms:svg file="site-sprite.svg" symbol="$params['text_id']" cms:eval="symbol"/>
+  </cms:if>
+</document>

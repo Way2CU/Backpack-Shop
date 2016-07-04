@@ -27,25 +27,37 @@
 
   <!-- Product information -->
   <div class="detail" data-uid="$params['uid']" cms:eval="data-uid">
-    <!-- Product name -->
-    <h2><cms:var param="name" multilanguage="yes"/></h2>
-    <!-- Product price -->
-    <span class="price" data-currency="shop::getDefaultCurrency()" cms:eval="data-currency">
-      <cms:text constant="label_price"/>
-      <cms:var param="price"/>
-    </span>
-    <br/>
-    <!-- Product description -->
-    <cms:markdown param="description" multilanguage="yes"/>
-    <!-- Add to cart button -->
-    <a href="javascript:void(0)" class="action">
-      <cms:text constant="button_add_to_cart"/>
-      <cms:svg file="site-sprite.svg" symbol="cart_add"/>
-    </a>
-    <!-- Buy now button -->
-    <a href="url_Make('checkout','shop')" class="action buy" cms:eval="href">
-      <cms:text constant="buy_now"/>
-      <cms:svg file="site-sprite.svg" symbol="cart_add"/>
-    </a>
+    <div class="information">
+      <!-- Product name -->
+      <h2><cms:var param="name" multilanguage="yes"/></h2>
+      <!-- Product price -->
+      <span class="price" data-currency="shop::getDefaultCurrency()" cms:eval="data-currency">
+        <cms:text constant="label_price"/>
+        <cms:var param="price"/>
+      </span>
+      <br/>
+      <!-- Product description -->
+      <cms:markdown param="description" multilanguage="yes"/>
+      <!-- Add to cart button -->
+      <a href="javascript:void(0)" class="action">
+        <cms:text constant="button_add_to_cart"/>
+        <cms:svg file="site-sprite.svg" symbol="cart_add"/>
+      </a>
+      <!-- Buy now button -->
+      <a href="url_Make('checkout','shop')" class="action buy" cms:eval="href">
+        <cms:text constant="buy_now"/>
+        <cms:svg file="site-sprite.svg" symbol="cart_add"/>
+      </a>
+    </div>
+    <!-- Product properties (pvc, laptop, skate) -->
+    <div class="properties">
+      <cms:module
+        name="shop"
+        action="show_property_list"
+        item="$params['id']"
+        template="parts/product_properties.xml"
+        cms:eval="item"
+        />
+    </div>
   </div>
 </document>
