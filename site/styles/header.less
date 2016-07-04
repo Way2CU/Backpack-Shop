@@ -36,8 +36,17 @@ nav#language {
   vertical-align: middle;
 }
 
+div.user {
+  float: right;
+}
+
+html[dir="rtl"] div.user {
+  float: left;
+}
+
+div.user a,
 nav#language a,
-header > div > a {
+header div a {
   display: inline-block;
   text-decoration: none;
   padding: 1em 2em;
@@ -50,7 +59,7 @@ nav#language a {
 }
 
 nav#language a:hover,
-header > div > a:hover {
+header div a:hover {
   background-color: @color_attention;
 }
 
