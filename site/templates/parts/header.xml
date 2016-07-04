@@ -15,19 +15,6 @@
         </button>
       </form>
 
-      <a href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" class="share">
-        <cms:text constant="label_share"/>
-        <cms:svg file="site-sprite.svg" symbol="facebook"/>
-      </a>
-
-      <!-- Language menu -->
-      <nav id="language">
-        <cms:module
-          name="language_menu"
-          action="print"
-          />
-      </nav>
-
       <cms:guest>
         <a class="login" href="#">
           <cms:svg file="site-sprite.svg" symbol="user"/>
@@ -53,6 +40,19 @@
           <cms:text constant="menu_logout"/>
         </a>
       </cms:user>
+
+      <a href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" class="share">
+        <cms:text constant="label_share"/>
+        <cms:svg file="site-sprite.svg" symbol="facebook"/>
+      </a>
+
+      <!-- Language menu -->
+      <nav id="language">
+        <cms:module
+          name="language_menu"
+          action="print"
+          />
+      </nav>
     </div>
 
     <!-- Shop categories menu -->
