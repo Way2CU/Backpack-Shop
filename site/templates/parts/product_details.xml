@@ -27,7 +27,7 @@
 
   <!-- Product information -->
   <div class="detail" data-uid="$params['uid']" cms:eval="data-uid">
-    
+
     <div class="information">
       <!-- Product name -->
       <h2><cms:var param="name" multilanguage="yes"/></h2>
@@ -47,7 +47,6 @@
       <!-- Buy now button -->
       <a href="url_Make('checkout','shop')" class="action buy" cms:eval="href">
         <cms:text constant="buy_now"/>
-        <cms:svg file="site-sprite.svg" symbol="cart_add"/>
       </a>
     </div>
 
