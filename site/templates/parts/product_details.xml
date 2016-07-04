@@ -40,7 +40,7 @@
       <!-- Product description -->
       <cms:markdown param="description" multilanguage="yes"/>
       <!-- Add to cart button -->
-      <a href="javascript:void(0)" class="action">
+      <a href="javascript:void(0)" class="action add">
         <cms:text constant="button_add_to_cart"/>
         <cms:svg file="site-sprite.svg" symbol="cart_add"/>
       </a>
