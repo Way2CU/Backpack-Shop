@@ -443,12 +443,16 @@ div.detail div.properties svg {
   display: block;
   padding: 0.5em;
   margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   width: 5em;
   height: 5em;
   fill: @color_bright_text;
   border: 1px solid fade(@color_bright_text, 30%);
+}
+
+html[dir="rtl"] div.detail div.properties svg {
+  margin-left: 0;
+  margin-right: auto;
 }
 
 /**
