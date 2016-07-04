@@ -49,7 +49,7 @@
   display: inline-block;
   vertical-align: middle;
   text-decoration: none;
-  padding: 1em 2.5em;
+  padding: 1em 2em;
   color: @color_text;
   font-weight: 700;
   background-color: @color_hover;
@@ -364,12 +364,12 @@ div.gallery {
 }
 
 div.thumbnails {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
 }
 
 div.thumbnails img {
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   padding: 0.5em;
   margin-left: auto;
   margin-right: auto;
@@ -384,14 +384,15 @@ div.thumbnails img:hover {
 
 div.gallery img.big_image {
   position: absolute;
-  top: 50%;
-  margin-top: -150px;
-  right: 1.5em;
+  bottom: 2em;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: all 0.3s;
 }
 
-html[dir="rtl"] div.gallery img.big_image {
-  right: auto;
-  left: 1.5em;
+div.gallery img.big_image.visible {
+  opacity: 1;
 }
 
 div.detail {
@@ -399,28 +400,56 @@ div.detail {
   color: @color_bright_text;
 }
 
-div.detail h2 {
+div.detail div.properties,
+div.detail div.information {
+  display: inline-block;
+  vertical-align: top;
+}
+
+div.detail div.information {
+  width: calc(~'(100% - 150px)');
+}
+
+div.detail div.information h2 {
   margin-top: 0;
   text-transform: uppercase;
   color: @color_hover;
   font-size: 2.5em;
 }
 
-div.detail span.price {
+div.detail div.information span.price {
   font-size: 2em;
   font-weight: 700;
 }
 
-div.detail span.price:after {
+div.detail div.information span.price:after {
   content: attr(data-currency);
   display: inline-block;
   padding: 0em 0.2em;
 }
 
-div.detail a.action.buy {
+div.detail div.information a.action.buy {
   margin-left: 1em;
   margin-right: 1em;
 }
+
+div.detail div.properties {
+  width: 150px;
+  box-sizing: border-box;
+}
+
+div.detail div.properties svg {
+  display: block;
+  padding: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  width: 5em;
+  height: 5em;
+  fill: @color_bright_text;
+  border: 1px solid fade(@color_bright_text, 30%);
+}
+
 
 /**
  * Related items
@@ -430,4 +459,3 @@ section.related_items h3 {
   text-align: center;
   color: @color_bright_text;
 }
-
