@@ -4,7 +4,7 @@
 	<div class="cart">
     <cms:svg file="site-sprite.svg" symbol="cart"/>
     <cms:text constant="title_cart"/>
-    <span class="products_count">3</span>
+    <span class="products_count"></span>
 
     <!-- List of product items -->
     <ul id="products"></ul>
