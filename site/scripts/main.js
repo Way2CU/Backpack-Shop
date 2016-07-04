@@ -84,11 +84,13 @@ Site.on_load = function() {
 		.attachControls('div#slider a');
 
 	// create function for rotating product big image
-	var product_thumbnails = document.querySelectorAll('img.thumbnail');
-	var big_image = document.querySelectorAll('img.big_image')[0].classList.add('visible');
-	for (var i = 0, count = product_thumbnails.length; i<count; i++) {
-		product_thumbnails[i].dataset.index = i;
-		product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
+	if(document.querySelector('section.product_details')) {
+		var product_thumbnails = document.querySelectorAll('img.thumbnail');
+		var big_image = document.querySelectorAll('img.big_image')[0].classList.add('visible');
+		for (var i = 0, count = product_thumbnails.length; i<count; i++) {
+			product_thumbnails[i].dataset.index = i;
+			product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
+		}
 	}
 };
 
