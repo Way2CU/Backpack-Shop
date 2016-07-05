@@ -19,7 +19,7 @@
       </title>
       <cms:module name="shop" action="include_cart_scripts"/>
       <cms:script src="_BASEURL.'/site/scripts/floating_menu.js'" cms:eval="src"/>
-      <cms:collection include="page_control"/>
+      <cms:collection include="page_control,communicator,dialog"/>
       <cms:module name="head_tag" action="print_tag"/>
     </head>
 
