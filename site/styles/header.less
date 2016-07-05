@@ -68,19 +68,19 @@ header > div a:hover {
   background-color: @color_attention;
 }
 
-form {
+header form {
   display: inline-block;
   vertical-align: middle;
   margin: 0em 2em;
   line-height: 100%;
 }
 
-form label {
+header form label {
   display: inline-block;
   vertical-align: top;
 }
 
-form label input {
+header form label input {
   vertical-align: top;
   padding: 0.4em 0.2em;
   border: 1px solid lighten(@color_background, 50%);
@@ -88,11 +88,11 @@ form label input {
   transition: all 0.5s;
 }
 
-form label input:focus {
+header form label input:focus {
   width: 200px;
 }
 
-form button {
+header form button {
   display: inline-block;
   vertical-align: top;
   padding: 0.35em 0.5em;
@@ -101,7 +101,7 @@ form button {
   transition: all 0.3s;
 }
 
-form button:hover {
+header form button:hover {
   background-color: lighten(@color_attention, 5%);
 }
 
@@ -245,12 +245,12 @@ ul#products {
   width: 600px;
   background-color: fade(@color_bright_text, 90%);
   box-shadow: 0px 2px 15px fade(@color_background, 50%);
-  transform: rotateX( 0deg);
+  transform: rotateX( -90deg);
   transform-style: preserve-3d;
   transform-origin: 50% 0%;
-  min-height: 500px;
-  visibility: visible;
-  opacity: 1;
+  min-height: 0px;
+  visibility: hidden;
+  opacity: 0;
   transition: all 0.6s;
   transition-delay: 0.3s;
   background-image: url(../images/logo-black.svg);
@@ -262,6 +262,15 @@ ul#products {
 html[dir="rtl"] ul#products {
   right: auto;
   left: 0;
+}
+
+div.cart:hover ul#products {
+  min-height: 500px;
+  visibility: visible;
+  opacity: 1;
+  transform: rotateX(0deg);
+  transition-delay: 0s;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 ul#products li.item {
@@ -305,12 +314,3 @@ ul#products li.item > div a svg {
 ul#products li.item > div a:hover svg {
   fill: @color_attention;
 }
-
-// div.cart:hover ul#products {
-//   min-height: 500px;
-//   visibility: visible;
-//   opacity: 1;
-//   transform: rotateX(0deg);
-//   transition-delay: 0s;
-//   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
-// }
