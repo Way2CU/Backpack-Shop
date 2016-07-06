@@ -1,12 +1,4 @@
 <document>
-  <!-- Display category title as svg file -->
-  <cms:if condition="isset($template['image_title'])">
-    <img 
-      src="_BASEURL.'/site/images/'.$params['text_id']"
-      alt="$params['text_id']"
-      cms:eval="src,alt"
-      />
-  </cms:if>
 
   <!-- Display page title of category page -->
   <cms:if condition="isset($template['page_title'])">
@@ -14,7 +6,7 @@
   </cms:if>
 
   <!-- Display regular title as text -->
-  <cms:if condition="!isset($template['image_title'])">
+  <cms:if condition="!isset($template['page_title'])">
     <h2><cms:var param="title" multilanguage="yes"/></h2>
   </cms:if>
 </document>

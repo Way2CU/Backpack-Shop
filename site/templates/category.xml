@@ -17,6 +17,14 @@
           <param name="page_title" value=""/>
         </cms:module>
       </title>
+      <!-- Page description -->
+      <cms:module
+        name="shop"
+        action="show_category"
+        id="$_REQUEST['id']"
+        template="parts/page_description.xml"
+        cms:eval="id"
+        />
       <cms:module name="shop" action="include_cart_scripts"/>
       <cms:script src="_BASEURL.'/site/scripts/floating_menu.js'" cms:eval="src"/>
       <cms:collection include="page_control,communicator,dialog"/>
