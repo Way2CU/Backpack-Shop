@@ -20,4 +20,7 @@
       <action name="shipping-policy" file="shipping_policy.xml"/>
     </language>
   </section>
+  <section name="search">
+    <language name="all" file="search.xml"/>
+  </section>
 </document>
