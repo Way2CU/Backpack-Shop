@@ -470,3 +470,101 @@ section.related_items h3 {
   text-align: center;
   color: @color_bright_text;
 }
+
+/**
+ * Dialogs
+ */
+div.dialog.login div.title {
+  background-color: @color_hover;
+  color: @color_text;
+}
+
+div.dialog.login div.content {
+  padding: 1em;
+}
+
+div.dialog.login p {
+  margin-top: 0;
+}
+
+div.dialog.login form a {
+  color: @color_text;
+  font-weight: 700;
+}
+
+div.dialog.login label {
+  display: block;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+div.dialog.login label input {
+  padding: 0.7em 0.2em;
+  border: 1px solid @color_ac_bright_grey;
+  width: calc(~'(100% - 0.6em)');
+  transition: all 0.3s;
+}
+
+div.dialog.login label input[type="checkbox"] {
+  display: none;
+}
+
+div.dialog.login label input[type="checkbox"]:checked ~ span:before {
+  transform: scale(1);
+}
+
+div.dialog.login label span {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+div.dialog.login label span:before,
+div.dialog.login label span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  left: 102%;
+  width: 1em;
+  height: 1em;
+  border: 1px solid @color_ac_bright_grey;
+}
+
+div.dialog.login label span:before {
+  background-image: url(../images/check_mark.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+html[dir="rtl"] div.dialog.login label span:before,
+html[dir="rtl"] div.dialog.login label span:after {
+  left: auto;
+  right: 102%;
+}
+
+div.dialog.login label input:hover {
+  border-color: fade(@color_hover, 80%);
+}
+
+div.dialog.login label input:focus {
+  border-color: @color_hover;
+}
+
+div.dialog.login div.captcha {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.dialog.login div.command_bar a {
+  padding: 1em 1.5em;
+  background-color: fade(@color_hover, 60%);
+  color: @color_text;
+}
+
+div.dialog.login div.command_bar a:hover {
+  background-color: @color_hover;
+}
