@@ -235,13 +235,10 @@ div.cart > span {
   padding: 0.5em 1em;
 }
 
-ul#products {
+div.cart div.popup {
   position: absolute;
   top: 100%;
   right: 0;
-  margin: 0;
-  padding: 0em;
-  list-style-type: none;
   width: 600px;
   background-color: fade(@color_bright_text, 90%);
   box-shadow: 0px 2px 15px fade(@color_background, 50%);
@@ -253,24 +250,26 @@ ul#products {
   opacity: 0;
   transition: all 0.6s;
   transition-delay: 0.3s;
-  background-image: url(../images/logo-black.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% auto;
 }
 
-html[dir="rtl"] ul#products {
+html[dir="rtl"] div.popup {
   right: auto;
   left: 0;
 }
 
-div.cart:hover ul#products {
+div.cart:hover div.popup {
   min-height: 500px;
   visibility: visible;
   opacity: 1;
   transform: rotateX(0deg);
   transition-delay: 0s;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+ul#products {
+  margin: 0;
+  padding: 0em;
+  list-style-type: none;
 }
 
 ul#products li.item {
@@ -313,4 +312,41 @@ ul#products li.item > div a svg {
 
 ul#products li.item > div a:hover svg {
   fill: @color_attention;
+}
+
+div.cart div.total {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: @color_bright_text;
+  border-top: 1px solid fade(@color_background, 20%);
+}
+
+div.cart div.total span {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 2em 0.5em;
+  color: @color_text;
+}
+
+div.cart div.total span.bold {
+  font-weight: 700;
+}
+
+div.cart div.total a.buy {
+  float: right;
+  margin: 1em 0.5em;
+  color: @color_text;
+  background-color: @color_hover;
+  transition: all 0.3s;
+}
+
+html[dir="rtl"] div.cart div.total a.buy {
+  float: left;
+}
+
+div.cart div.total a.buy:hover {
+  background-color: @color_attention;
+  color: @color_bright_text;
 }

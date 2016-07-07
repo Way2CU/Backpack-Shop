@@ -7,6 +7,23 @@
     <span class="products_count"></span>
 
     <!-- List of product items -->
-    <ul id="products"></ul>
+    <div class="popup">
+
+      <ul id="products"></ul>
+
+      <div class="total">
+        <span class="bold"><cms:text constant="label_cart_count"/></span>
+        <span class="count"></span>
+        <span class="bold"><cms:text constant="label_cart_price"/></span>
+        <span class="price"></span>
+        <a 
+          href="url_Make('checkout', 'shop')"
+          class="buy"
+          cms:eval="href"
+          >
+          <cms:text constant="buy_now"/>
+        </a>
+      </div>
+    </div>
 	</div>
 </document>

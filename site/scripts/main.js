@@ -1080,6 +1080,8 @@ Site.on_load = function() {
 		.set_checkout_url('/shop/checkout')
 		.ui.add_item_list($('ul#products'))
 		.ui.add_total_count_label($('div.cart span.products_count'))
+		.ui.add_total_count_label($('div.cart div.total span.count'))
+		.ui.add_total_cost_label($('div.cart div.total span.price'))
 		.add_item_view(Site.ItemView);
 
 	// create handler for add_to_cart button
