@@ -334,6 +334,7 @@ ul#features li svg {
 /**
  * Category page
  */
+div#checkout_container,
 section.search,
 section.product_details,
 section.category {
@@ -344,6 +345,7 @@ section.category {
   min-height: 700px;
 }
 
+div#checkout_container,
 section.product_details {
   min-height: auto;
 }
@@ -571,5 +573,79 @@ div.dialog.login div.command_bar a {
 }
 
 div.dialog.login div.command_bar a:hover {
+  background-color: @color_hover;
+}
+
+/**
+ * Checkout pages
+ */
+
+div#checkout_steps a {
+  color: @color_bright_text;
+}
+
+div#checkout_steps a:before {
+  border-radius: 0;
+  background-color: fade(@color_hover, 90%);
+  border: 1px solid @color_hover;
+}
+
+div#checkout_steps a:hover:before {
+  background-color: @color_hover;
+}
+
+div#checkout_steps a.active:before {
+  background-color: @color_attention;
+  border: 1px solid @color_attention;
+}
+
+html[dir=rtl] div#checkout_steps a:not(:last-of-type):after {
+  border-right: 5px solid @color_hover;
+}
+
+div#input_details {
+  border-radius: 0;
+}
+
+div#input_details h1 {
+  border-radius: 0;
+  padding: 0.5em;
+  background-color: linear-gradient(180deg, #332e2f 0%, #000000 100%);
+}
+
+div#input_details a {
+  color: @color_text;
+  font-weight: 700;
+}
+
+div#input_details label select, 
+div#input_details label input {
+  border-color: @color_ac_bright_grey;
+  border-radius: 0;
+}
+
+div#input_details label select:hover, 
+div#input_details label input:hover {
+  border-color: @color_hover;
+}
+
+div#input_details label.radio input + span:before,
+div#input_details label.checkbox input + span:before {
+  border-radius: 0;
+}
+
+div.checkout_controls button,
+html[dir=rtl] div.checkout_controls button {
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  color: @color_text;
+  background-color: fade(@color_hover, 90%);
+}
+
+div.checkout_controls button:hover,
+html[dir=rtl] div.checkout_controls button:hover {
   background-color: @color_hover;
 }
