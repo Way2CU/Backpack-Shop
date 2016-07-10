@@ -71,7 +71,8 @@ header > div  a:before {
   width: 100%;
   height: 100%;
   opacity: 0;
-  background-image: linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
   transition: all 0.3s;
   z-index: -1;
 }
@@ -144,7 +145,8 @@ nav#main:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
   opacity: 0;
   transition: all 0.3s;
   z-index: -1;
@@ -199,7 +201,8 @@ nav#main div.drop_down a {
 
 nav#main div.drop_down a.active,
 nav#main div.drop_down a:hover {
-  background-image: linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
   color: @color_bright_text;
 }
 
@@ -234,7 +237,8 @@ nav#categories a:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
   opacity: 0;
   transition: all 0.3s;
   z-index: -1;
@@ -256,15 +260,34 @@ nav#categories a.active {
 div.cart {
   display: inline-block;
   vertical-align: middle;
-  padding: 0.5em;
+  padding: 0.4em;
   float: right;
   background-color: transparent;
   transition: all 0.3s;
   position: relative;
+  z-index: 0;
 }
 
 div.cart:hover {
-  background-color: @color_hover;
+  color: @color_bright_text;
+}
+
+div.cart:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+div.cart:hover:before {
+  opacity: 1;
 }
 
 html[dir="rtl"] div.cart {
@@ -274,15 +297,25 @@ html[dir="rtl"] div.cart {
 div.cart svg {
   padding: 0em 0.5em;
   fill: @color_text;
+  transition: all 0.3s;
+}
+
+div.cart:hover svg {
+  fill: @color_bright_text;
 }
 
 div.cart > span {
   display: inline-block;
   margin-right: 0.5em;
   margin-left: 0.5em;
-  background-color: @color_dark_attention;
-  color: @color_bright_text;
+  border: 1px solid @color_text;
+  color: @color_text;
   padding: 0.5em 1em;
+  transition: all 0.3s;
+}
+
+div.cart:hover span {
+  color: @color_bright_text;
 }
 
 div.cart div.popup {
