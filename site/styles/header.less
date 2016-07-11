@@ -314,8 +314,9 @@ div.cart > span {
   transition: all 0.3s;
 }
 
-div.cart:hover span {
+div.cart:hover > span {
   color: @color_bright_text;
+  border-color: @color_bright_text;
 }
 
 div.cart div.popup {
@@ -421,6 +422,7 @@ div.cart div.total a.buy {
   float: right;
   margin: 1em 0.5em;
   color: @color_text;
+  font-weight: 700;
   background-color: @color_hover;
   transition: all 0.3s;
 }

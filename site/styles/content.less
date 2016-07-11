@@ -54,11 +54,30 @@
   font-weight: 700;
   background-color: @color_hover;
   transition: all 0.3s;
+  position: relative;
+  z-index: 0;
 }
 
 .action:hover {
-  background-color: @color_attention;
   color: @color_bright_text;
+}
+
+.action:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.action:hover:before {
+  opacity: 1;
 }
 
 .action svg {
@@ -206,7 +225,7 @@ a.product {
 }
 
 a.product:hover p {
-  color: @color_attention;
+  color: @color_dark_attention;
 }
 
 a.product:nth-of-type(1n) {
@@ -275,7 +294,8 @@ ul#features li.triangle {
 
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: 100% auto;
+  transition: all 0.3s;
 }
 
 ul#features li.triangle:before {
@@ -301,6 +321,7 @@ ul#features li.triangle:after {
   height:16em;
   background-image: 
     linear-gradient(-315deg, fade(@color_hover, 80%) 49%, transparent 49%);
+  transition: all 0.3s;
 }
 
 html[dir="rtl"] ul#features li.triangle:after {
@@ -308,6 +329,7 @@ html[dir="rtl"] ul#features li.triangle:after {
   right: 0%;
   background-image: 
     linear-gradient(-45deg, fade(@color_hover, 80%) 49%, transparent 49%);
+  transition: all 0.3s;
 }
 
 ul#features li:nth-of-type(2) {
@@ -570,10 +592,30 @@ div.dialog.login div.command_bar a {
   padding: 0.7em 1.5em;
   background-color: fade(@color_hover, 90%);
   color: @color_text;
+  position: relative;
+  z-index: 0;
 }
 
 div.dialog.login div.command_bar a:hover {
-  background-color: @color_hover;
+  color: @color_bright_text;
+}
+
+div.dialog.login div.command_bar a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+div.dialog.login div.command_bar a:hover:before {
+  opacity: 1;
 }
 
 /**
@@ -595,8 +637,8 @@ div#checkout_steps a:hover:before {
 }
 
 div#checkout_steps a.active:before {
-  background-color: @color_attention;
-  border: 1px solid @color_attention;
+  background-color: @color_dark_attention;
+  border: 1px solid @color_dark_attention;
 }
 
 html[dir=rtl] div#checkout_steps a:not(:last-of-type):after {
@@ -644,9 +686,61 @@ html[dir=rtl] div.checkout_controls button {
   text-shadow: none;
   color: @color_text;
   background-color: fade(@color_hover, 90%);
+  position: relative;
+  z-index: 0;
+}
+
+div.checkout_controls button:before,
+html[dir=rtl] div.checkout_controls button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+div.checkout_controls button:hover:before,
+html[dir=rtl] div.checkout_controls button:hover:before {
+  opacity: 1;
 }
 
 div.checkout_controls button:hover,
 html[dir=rtl] div.checkout_controls button:hover {
-  background-color: @color_hover;
+  color: @color_bright_text;
+}
+
+/**
+ * Tablet version
+ */
+@media only screen 
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px) {
+header {
+  width: auto;
+  left: 0;
+  right: 0;
+}
+
+header form {
+  margin: 0 1em;
+}
+
+div.user a,
+nav#language a,
+header > div a {
+  padding: 1em 1em;
+}
+
+header div.user {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
 }
