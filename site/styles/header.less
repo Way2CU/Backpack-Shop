@@ -403,7 +403,8 @@ div.cart div.total {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: @color_bright_text;
+  background-color: @color_background;
+  color: @color_bright_text;
   border-top: 1px solid fade(@color_background, 20%);
 }
 
@@ -411,7 +412,6 @@ div.cart div.total span {
   display: inline-block;
   vertical-align: middle;
   padding: 2em 0.5em;
-  color: @color_text;
 }
 
 div.cart div.total span.bold {
@@ -421,9 +421,9 @@ div.cart div.total span.bold {
 div.cart div.total a.buy {
   float: right;
   margin: 1em 0.5em;
-  color: @color_text;
+  color: @color_bright_text;
   font-weight: 700;
-  background-color: @color_hover;
+  border: 1px solid @color_hover;
   transition: all 0.3s;
 }
 
@@ -432,6 +432,5 @@ html[dir="rtl"] div.cart div.total a.buy {
 }
 
 div.cart div.total a.buy:hover {
-  background-color: @color_dark_attention;
-  color: @color_bright_text;
+  border-color: @color_dark_attention;
 }

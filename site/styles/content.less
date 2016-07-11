@@ -50,16 +50,16 @@
   vertical-align: middle;
   text-decoration: none;
   padding: 1em 2em;
-  color: @color_text;
+  color: @color_bright_text;
+  border: 1px solid @color_hover;
   font-weight: 700;
-  background-color: @color_hover;
   transition: all 0.3s;
   position: relative;
   z-index: 0;
 }
 
 .action:hover {
-  color: @color_bright_text;
+  border-color: @color_dark_attention;
 }
 
 .action:before {
@@ -86,7 +86,7 @@
   padding: 0em 0.2em;
   width: 1.5em;
   height: 1.5em;
-  fill: @color_text;
+  fill: @color_bright_text;
   transition: all 0.3s;
 }
 
@@ -467,7 +467,7 @@ div.detail div.information span.price:after {
 div.detail div.information a.action.buy {
   margin-left: 1em;
   margin-right: 1em;
-  padding: 1.2em 2em;
+  padding: 1.1em 2em;
 }
 
 div.detail div.properties {
@@ -504,21 +504,31 @@ section.related_items h3 {
  * Dialogs
  */
 div.dialog.login div.title {
+  padding: 0.5em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
   background-color: @color_hover;
   color: @color_text;
 }
 
 div.dialog.login div.content {
-  padding: 1em;
+  padding: 2em;
+  background-color: @color_background;
+  color: @color_bright_text;
 }
 
 div.dialog.login p {
   margin-top: 0;
+  font-size: 1.1em;
 }
 
 div.dialog.login form a {
-  color: @color_text;
+  color: @color_bright_text;
   font-weight: 700;
+}
+
+div.dialog.login form hr {
+  border-color: fade(@color_bright_text, 20%);
 }
 
 div.dialog.login label {
@@ -590,14 +600,15 @@ div.dialog.login div.captcha {
 
 div.dialog.login div.command_bar a {
   padding: 0.7em 1.5em;
-  background-color: fade(@color_hover, 90%);
-  color: @color_text;
+  color: @color_bright_text;
+  background-color: transparent;
+  border: 1px solid @color_hover;
   position: relative;
   z-index: 0;
 }
 
 div.dialog.login div.command_bar a:hover {
-  color: @color_bright_text;
+  border-color: @color_dark_attention;
 }
 
 div.dialog.login div.command_bar a:before {
@@ -741,6 +752,23 @@ header div.user {
   display: inline-block;
   vertical-align: middle;
   float: none;
+}
+
+section {
+  padding: 1em calc(~'(100% - 960px)' / 2);
+}
+
+section.promoted {
+}
+
+html[dir="rtl"] a.product:nth-of-type(1n) {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+a.product {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 }
