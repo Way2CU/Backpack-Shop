@@ -695,8 +695,9 @@ html[dir=rtl] div.checkout_controls button {
   border-radius: 0;
   box-shadow: none;
   text-shadow: none;
-  color: @color_text;
-  background-color: fade(@color_hover, 90%);
+  color: @color_bright_text;
+  border: 1px solid @color_hover;
+  background-color: transparent;
   position: relative;
   z-index: 0;
 }
@@ -723,7 +724,7 @@ html[dir=rtl] div.checkout_controls button:hover:before {
 
 div.checkout_controls button:hover,
 html[dir=rtl] div.checkout_controls button:hover {
-  color: @color_bright_text;
+  border-color: @color_dark_attention;
 }
 
 /**
