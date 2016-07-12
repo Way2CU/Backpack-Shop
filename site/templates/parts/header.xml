@@ -8,6 +8,7 @@
       <!-- Search form -->
       <form action="url_Make('', 'search')" method="get" cms:eval="action">
         <label>
+          <span><cms:text constant="label_search"/></span>
           <input type="search" placeholder="label_search" name="query" cms:constant="placeholder"/>
         </label>
         <button type="submit">
@@ -16,9 +17,13 @@
       </form>
 
       <!-- Share link -->
-      <a href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" class="share">
-        <cms:text constant="label_share"/>
+      <a 
+        href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" 
+        class="share"
+        cms:eval="href"
+        >
         <cms:svg file="site-sprite.svg" symbol="facebook"/>
+        <cms:text constant="label_share"/>
       </a>
 
       <!-- Language menu -->
