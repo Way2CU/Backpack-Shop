@@ -63,7 +63,7 @@ header > div  a {
 
 div.user a:before,
 nav#language a:before,
-header > div  a:before {
+header > div > a:before {
   content: "";
   position: absolute;
   top: 0;
@@ -101,9 +101,13 @@ header form label {
 header form label input {
   vertical-align: top;
   padding: 0.4em 0.2em;
-  border: 1px solid lighten(@color_background, 50%);
+  border: none;
   width: 100px;
   transition: all 0.5s;
+}
+
+header form span {
+  font-size: 0;
 }
 
 header form label input:focus {
@@ -113,14 +117,39 @@ header form label input:focus {
 header form button {
   display: inline-block;
   vertical-align: top;
-  padding: 0.35em 0.5em;
+  padding: 0.30em 0.5em;
   border: none;
-  background-color: @color_dark_attention;
+  background-color: @color_ac_light_grey;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 0;
+}
+
+header form button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+header form button:hover:before {
+  opacity: 1;
+}
+
+header form button svg {
+  fill: @color_text;
   transition: all 0.3s;
 }
 
-header form button:hover {
-  background-color: lighten(@color_dark_attention, 5%);
+header form button:hover svg {
+  fill: @color_bright_text;
 }
 
 /**
@@ -199,11 +228,19 @@ nav#main div.drop_down a {
   transition: all 0.3s;
 }
 
-nav#main div.drop_down a.active,
+nav#main div.drop_down a:last-of-type {
+  border-bottom: none;
+}
+
 nav#main div.drop_down a:hover {
   background-image: 
     linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
   color: @color_bright_text;
+}
+
+nav#main div.drop_down a.active {
+  background-color: @color_ac_light_grey;
+  text-decoration: underline;
 }
 
 /**
@@ -257,28 +294,41 @@ nav#categories a.active {
 /**
  * Cart
  */
+@keyframes signal {
+  0% {opacity:  0.8;}
+  50% {opacity:  0;}
+  100% {opacity:  0.8;}
+}
+
 div.cart {
   display: inline-block;
   vertical-align: middle;
-  padding: 0.4em;
+  padding: 0.4em 0.4em;
   float: right;
   background-color: transparent;
   transition: all 0.3s;
   position: relative;
+  cursor: default;
   z-index: 0;
+}
+
+div.cart.active:after {
+  animation-name: signal;
+  animation-duration: 1s;
 }
 
 div.cart:hover {
   color: @color_bright_text;
 }
 
+div.cart:after,
 div.cart:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: calc(~'(100% + 2px)');
   background-image: 
     linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
   opacity: 0;
@@ -295,7 +345,7 @@ html[dir="rtl"] div.cart {
 }
 
 div.cart svg {
-  padding: 0em 0.5em;
+  padding: 0em 0.2em;
   fill: @color_text;
   transition: all 0.3s;
 }
@@ -306,12 +356,17 @@ div.cart:hover svg {
 
 div.cart > span {
   display: inline-block;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
+  margin-left: 0.4em;
   border: 1px solid @color_text;
   color: @color_text;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.8em;
   transition: all 0.3s;
+}
+
+
+html[dir="rtl"] div.cart > span {
+  margin-left: 0;
+  margin-right: 0.4em;
 }
 
 div.cart:hover > span {
@@ -358,6 +413,7 @@ ul#products {
 
 ul#products li.item {
   background-color: @color_bright_text;
+  color: @color_text;
   border-bottom: 1px solid fade(@color_text, 20%);
 }
 
@@ -382,6 +438,7 @@ ul#products li.item span.total:after {
 ul#products li.item > div a {
   display: inline-block;
   padding: 1em 0.5em;
+  cursor: pointer;
 }
 
 ul#products li.item > div a:hover {
@@ -392,6 +449,7 @@ ul#products li.item > div a svg {
   width: 1em;
   height: 1em;
   transition: all 0.3s;
+  fill: @color_text;
 }
 
 ul#products li.item > div a:hover svg {

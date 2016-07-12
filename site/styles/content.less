@@ -106,7 +106,7 @@ div.intro {
     url(../images/logo-black.svg),
     url(../images/header-home.jpg);
   background-repeat: no-repeat;
-  background-position: center 45%, center top;
+  background-position: center 40%, center top;
   background-size: 550px 250px, 1920px 700px;
   min-height: 700px;
   position: relative;
@@ -116,11 +116,11 @@ div.intro h1 {
   position: absolute;
   bottom: 100px;
   left: 50%;
-  margin-left: -350px;
+  margin-left: -325px;
   text-align: center;
   font-weight: 400;
   font-size: 3em;
-  width: 700px;
+  width: 650px;
 }
 
 div#slider {
@@ -183,6 +183,7 @@ div#slider a:nth-of-type(3) {
 
 div#slider a span {
   display: inline-block;
+  vertical-align: middle;
 }
 
 div#slider a:hover span.triangle:before {
@@ -224,10 +225,6 @@ a.product {
   transition: all 0.3s;
 }
 
-a.product:hover p {
-  color: @color_dark_attention;
-}
-
 a.product:nth-of-type(1n) {
   margin-right: 12.5px;
 }
@@ -255,9 +252,13 @@ a.product h4 {
 }
 
 a.product p {
-  color: @color_ac_bright_grey;
+  display: inline-block;
+  padding: 0.5em 1em;
+  line-height: 100%;
+  color: @color_dark_attention;
   font-size: 1.2em;
   transition: all 0.3s;
+  border: 1px solid @color_dark_attention;
 }
 
 a.product p:after {
@@ -276,6 +277,7 @@ a.product img {
 ul#features {
   margin: 0;
   padding: 0;
+  padding-bottom: 1.5em;
   list-style-type: none;
 }
 
