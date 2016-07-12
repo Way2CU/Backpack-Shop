@@ -18,7 +18,7 @@
         <span class="price"></span>
         <a 
           href="url_Make('checkout', 'shop')"
-          class="buy"
+          class="buy action"
           cms:eval="href"
           >
           <cms:text constant="buy_now"/>
