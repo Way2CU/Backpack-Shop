@@ -16,7 +16,7 @@
       <action name="_default" file="about.xml"/>
       <action name="contact-us" file="contact.xml"/>
       <action name="terms-of-use" file="terms_of_use.xml"/>
-      <action name="warrenty-agreement" file="warrenty_agreement.xml"/>
+      <action name="warranty-agreement" file="warranty_agreement.xml"/>
       <action name="shipping-policy" file="shipping_policy.xml"/>
     </language>
   </section>
