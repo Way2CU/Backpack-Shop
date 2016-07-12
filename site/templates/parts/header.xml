@@ -1,78 +1,105 @@
 <document>
   <cms:svg file="site-sprite.svg"/>
-  <header>
-    <div>
-      <!-- Main menu -->
-      <cms:template file="parts/main_menu.xml"/>
+  <!-- Desktop header -->
+  <cms:desktop>
+    <header>
+      <div>
+        <!-- Main menu -->
+        <cms:template file="parts/main_menu.xml"/>
 
-      <!-- Search form -->
-      <form action="url_Make('', 'search')" method="get" cms:eval="action">
-        <label>
-          <span><cms:text constant="label_search"/></span>
-          <input type="search" placeholder="label_search" name="query" cms:constant="placeholder"/>
-        </label>
-        <button type="submit">
-          <cms:svg file="site-sprite.svg" symbol="search"/>
-        </button>
-      </form>
+        <!-- Search form -->
+        <form action="url_Make('', 'search')" method="get" cms:eval="action">
+          <label>
+            <span><cms:text constant="label_search"/></span>
+            <input type="search" placeholder="label_search" name="query" cms:constant="placeholder"/>
+          </label>
+          <button type="submit">
+            <cms:svg file="site-sprite.svg" symbol="search"/>
+          </button>
+        </form>
 
-      <!-- Share link -->
-      <a 
-        href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" 
-        class="share"
-        cms:eval="href"
-        >
-        <cms:svg file="site-sprite.svg" symbol="facebook"/>
-        <cms:text constant="label_share"/>
-      </a>
+        <!-- Share link -->
+        <a 
+          href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" 
+          class="share"
+          cms:eval="href"
+          >
+          <cms:svg file="site-sprite.svg" symbol="facebook"/>
+          <cms:text constant="label_share"/>
+        </a>
 
-      <!-- Language menu -->
-      <nav id="language">
+        <!-- Language menu -->
+        <nav id="language">
+          <cms:module
+            name="language_menu"
+            action="print"
+            />
+        </nav>
+        <!-- User form -->
+        <div class="user">
+          <cms:guest>
+            <a class="login" href="#">
+              <cms:svg file="site-sprite.svg" symbol="user"/>
+              <cms:text constant="menu_login"/>
+            </a>
+            <a class="sign-up" href="#">
+              <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+              <cms:text constant="menu_signup"/>
+            </a>
+          </cms:guest>
+
+          <cms:user>
+            <a
+              class="control_panel"
+              href="url_Make('', 'user')"
+              cms:eval="href"
+              >
+              <cms:svg file="site-sprite.svg" symbol="cog"/>
+              <cms:text constant="menu_account"/>
+            </a>
+            <a class="logout" href="#">
+              <cms:svg file="site-sprite.svg" symbol="enter"/>
+              <cms:text constant="menu_logout"/>
+            </a>
+          </cms:user>
+        </div>
+      </div>
+
+      <!-- Shop categories menu -->
+      <nav id="categories">
         <cms:module
-          name="language_menu"
-          action="print"
+          name="shop"
+          action="show_category_list"
+          template="parts/shop_category_links.xml"
           />
       </nav>
-      <!-- User form -->
-      <div class="user">
-        <cms:guest>
-          <a class="login" href="#">
-            <cms:svg file="site-sprite.svg" symbol="user"/>
-            <cms:text constant="menu_login"/>
-          </a>
-          <a class="sign-up" href="#">
-            <cms:svg file="site-sprite.svg" symbol="sign-up"/>
-            <cms:text constant="menu_signup"/>
-          </a>
-        </cms:guest>
 
-        <cms:user>
-          <a
-            class="control_panel"
-            href="url_Make('', 'user')"
-            cms:eval="href"
-            >
-            <cms:svg file="site-sprite.svg" symbol="cog"/>
-            <cms:text constant="menu_account"/>
-          </a>
-          <a class="logout" href="#">
-            <cms:svg file="site-sprite.svg" symbol="enter"/>
-            <cms:text constant="menu_logout"/>
-          </a>
-        </cms:user>
+      <!-- shopping cart -->
+      <cms:template file="stock/cart.xml"/>
+    </header>
+  </cms:desktop>
+  <!-- Mobile header -->
+  <cms:mobile>
+    <header>
+      <div class="mobile_title">
+        <a href="javascript:void(0)" class="menu">
+          <cms:svg file="site-sprite.svg" symbol="menu"/>
+        </a>
+
+        <a 
+          href="url_Make('', 'home')" 
+          class="logo"
+          cms:eval="href"
+          >
+          <cms:svg file="logo-black.svg"/>
+        </a>
+
+        <a href="javascript:void(0)" class="cart">
+          <cms:svg file="site-sprite.svg" symbol="cart"/>
+        </a>
+        <!-- Mobile main menu -->
+        <cms:template file="parts/main_menu.xml"/>
       </div>
-    </div>
-
-    <!-- Shop categories menu -->
-    <nav id="categories">
-      <cms:module
-        name="shop"
-        action="show_category_list"
-        template="parts/shop_category_links.xml"
-        />
-    </nav>
-
-    <!-- shopping cart -->
-    <cms:template file="stock/cart.xml"/>
-  </header>
+    </header>
+  </cms:mobile>
 </document>

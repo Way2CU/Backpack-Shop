@@ -1,55 +1,181 @@
 <document>
-  <nav id="main">
-    <cms:svg file="site-sprite.svg" symbol="menu"/>
-    <div class="drop_down">
-      <a
-        class="$section == 'home' ? 'active' : false"
-        href="url_Make('', 'home')"
+  <!-- Desktop main menu -->
+  <cms:desktop>
+    <nav id="main">
+      <cms:svg file="site-sprite.svg" symbol="menu"/>
+      <div class="drop_down">
+        <a
+          class="$section == 'home' ? 'active' : false"
+          href="url_Make('', 'home')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_home"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('_default', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_about"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('contact-us', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_contact_us"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('terms-of-use', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_terms_of_use"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('warrenty-agreement', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_warranty_agreement"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('shipping-policy', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_shipping_policy"/>
+        </a>
+      </div>
+    </nav>
+  </cms:desktop>
+  <!-- Mobile menu -->
+  <cms:mobile>
+    <nav class="mobile_menu">
+      <!-- Search form -->
+      <form action="url_Make('', 'search')" method="get" cms:eval="action">
+        <label>
+          <span><cms:text constant="label_search"/></span>
+          <input type="search" placeholder="label_search" name="query" cms:constant="placeholder"/>
+        </label>
+        <button type="submit">
+          <cms:svg file="site-sprite.svg" symbol="search"/>
+        </button>
+      </form>
+
+      <!-- Shop categories menu -->
+      <nav id="categories">
+        <cms:module
+          name="shop"
+          action="show_category_list"
+          template="parts/shop_category_links.xml"
+          />
+      </nav>
+
+      <!-- User links -->
+      <div class="user">
+        <cms:guest>
+          <a class="login" href="#">
+            <cms:svg file="site-sprite.svg" symbol="user"/>
+            <cms:text constant="menu_login"/>
+          </a>
+          <a class="sign-up" href="#">
+            <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+            <cms:text constant="menu_signup"/>
+          </a>
+        </cms:guest>
+
+        <cms:user>
+          <a
+            class="control_panel"
+            href="url_Make('', 'user')"
+            cms:eval="href"
+            >
+            <cms:svg file="site-sprite.svg" symbol="cog"/>
+            <cms:text constant="menu_account"/>
+          </a>
+          <a class="logout" href="#">
+            <cms:svg file="site-sprite.svg" symbol="enter"/>
+            <cms:text constant="menu_logout"/>
+          </a>
+        </cms:user>
+      </div>
+
+      <!-- Simple page links -->
+      <div class="main_links">
+        <a
+          class="$section == 'home' ? 'active' : false"
+          href="url_Make('', 'home')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_home"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('_default', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_about"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('contact-us', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_contact_us"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('terms-of-use', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_terms_of_use"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('warrenty-agreement', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_warranty_agreement"/>
+        </a>
+        <a
+          class="$section == 'about' ? 'active' : false"
+          href="url_Make('shipping-policy', 'about')"
+          cms:eval="href"
+          cms:optional="class"
+          >
+          <cms:text constant="menu_shipping_policy"/>
+        </a>
+      </div>
+
+      <!-- Share link -->
+      <a 
+        href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" 
+        class="share"
         cms:eval="href"
-        cms:optional="class"
         >
-        <cms:text constant="menu_home"/>
+        <cms:svg file="site-sprite.svg" symbol="facebook"/>
+        <cms:text constant="label_share"/>
       </a>
-      <a
-        class="$section == 'about' ? 'active' : false"
-        href="url_Make('_default', 'about')"
-        cms:eval="href"
-        cms:optional="class"
-        >
-        <cms:text constant="menu_about"/>
-      </a>
-      <a
-        class="$section == 'about' ? 'active' : false"
-        href="url_Make('contact-us', 'about')"
-        cms:eval="href"
-        cms:optional="class"
-        >
-        <cms:text constant="menu_contact_us"/>
-      </a>
-      <a
-        class="$section == 'about' ? 'active' : false"
-        href="url_Make('terms-of-use', 'about')"
-        cms:eval="href"
-        cms:optional="class"
-        >
-        <cms:text constant="menu_terms_of_use"/>
-      </a>
-      <a
-        class="$section == 'about' ? 'active' : false"
-        href="url_Make('warrenty-agreement', 'about')"
-        cms:eval="href"
-        cms:optional="class"
-        >
-        <cms:text constant="menu_warranty_agreement"/>
-      </a>
-      <a
-        class="$section == 'about' ? 'active' : false"
-        href="url_Make('shipping-policy', 'about')"
-        cms:eval="href"
-        cms:optional="class"
-        >
-        <cms:text constant="menu_shipping_policy"/>
-      </a>
-    </div>
-  </nav>
+      
+      <!-- Language menu -->
+      <div class="languages">
+        <cms:module
+          name="language_menu"
+          action="print"
+          />
+      </div>
+    </nav>
+  </cms:mobile>
 </document>

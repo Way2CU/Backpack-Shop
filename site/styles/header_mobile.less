@@ -1,0 +1,203 @@
+/**
+ * Header mobile Style Sheet
+ * Backpack Shop
+ *
+ * Copyright (c) 2016. by Way2CU, http://way2cu.com
+ * Authors: Tal Reznic
+ */
+header > div.mobile_title {
+  padding: 0.2em 0em;
+  background-image: linear-gradient(180deg, #332e2f 0%, #000 100%);
+}
+
+div.mobile_title a.menu,
+div.mobile_title a.cart {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2em;
+  padding: 1em;
+}
+
+html[dir="rtl"] div.mobile_title a.menu,
+html[dir="rtl"] div.mobile_title a.cart {
+  left: auto;
+  right: 0;
+}
+
+div.mobile_title a.cart {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] div.mobile_title a.cart {
+  left: 0;
+  right: auto;
+}
+
+div.mobile_title a.menu svg,
+div.mobile_title a.cart svg {
+  display: block;
+  width: 2em;
+  height: 2em;
+  fill: @color_bright_text;
+}
+
+div.mobile_title a.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
+
+div.mobile_title a.logo svg {
+  fill: @color_bright_text;
+}
+
+nav.mobile_menu {
+  top: 56px !important;
+  left: -100%;
+  padding: 0.5em;
+  width: calc(~'(100% - 1em)');
+  overflow-y: scroll;
+}
+
+html[dir="rtl"] nav.mobile_menu {
+  right: -100%;
+  left: auto;
+}
+
+nav.mobile_menu form {
+  border: 1px solid @color_text;
+  overflow: hidden;
+}
+
+nav.mobile_menu form button,
+nav.mobile_menu form label {
+  display: inline-block;
+  vertical-align: middle;
+  width: calc(~'(100% - 3em)');
+}
+
+nav.mobile_menu form button {
+  width: 3em;
+  border: 0;
+  padding: 0.7em 0.5em;
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+}
+
+nav.mobile_menu form button svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1.5em;
+  height: 1.5em;
+  fill: @color_bright_text;
+}
+
+nav.mobile_menu form label span {
+  font-size: 0;
+}
+
+nav.mobile_menu form label input {
+  border: 0;
+  padding: 0.5em 0.2em;
+  width: 100%;
+}
+
+nav#categories {
+  margin: 1em 0em;
+  padding-top: 1em;
+  padding-bottom: calc(~'(1em - 4%)');
+  border-top: 1px solid @color_ac_light_grey;
+  border-bottom: 1px solid @color_ac_light_grey;
+}
+
+div.user {
+  padding-bottom: 1em;
+  border-bottom: 1px solid @color_ac_light_grey;
+}
+
+div.user a,
+nav#categories a {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 4%;
+  padding: 1em;
+  line-height: 100%;
+  text-align: center;
+  width: 48%;
+  border: 1px solid darken(@color_ac_light_grey, 10%); 
+  box-sizing: border-box;
+}
+
+div.user a {
+  padding: 0.5em 1em;
+  margin-bottom: 0;
+  border-color: @color_dark_attention;
+}
+
+div.user a svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  padding: 0em 0.2em;
+}
+
+div.user a:nth-of-type(2n),
+nav#categories a:nth-of-type(2n) {
+  margin-left: 4%;
+}
+
+html[dir="rtl"] div.user a:nth-of-type(2n),
+html[dir="rtl"] nav#categories a:nth-of-type(2n) {
+  margin-right: 4%;
+  margin-left: 0;
+}
+
+div.main_links a {
+  display: block;
+  text-align: center;
+  padding: 1em;
+  border-bottom: 1px solid @color_ac_light_grey;
+}
+
+/**
+ * Facebook link
+ */
+a.share {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  width: 150px;
+  padding: 0.5em;
+  border: 1px solid @color_dark_attention;
+}
+
+a.share svg {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0em 0.2em;
+  width: 1em;
+  height: 1em;
+}
+
+div.languages {
+  text-align: center;
+  padding-bottom: 5em;
+}
+
+div.languages a {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.2em;
+  margin-left: 0.2em;
+  padding: 0.5em 1em;
+  border: 1px solid @color_dark_attention;
+}
