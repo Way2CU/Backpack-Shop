@@ -1023,6 +1023,13 @@ Site.handle_add_to_cart = function(event) {
 	event.preventDefault();
 
 	var uid = document.querySelector('div.detail').getAttribute('data-uid');
+	var cart = document.querySelector('div.cart');
+
+	// make cart blink
+	cart.classList.add('active');
+	setTimeout(function() {
+		cart.classList.remove('active');
+	}, 1000);
 
 	// find item with same uid
 	var item_list = Site.cart.get_item_list_by_uid(uid);
