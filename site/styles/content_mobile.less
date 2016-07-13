@@ -45,7 +45,7 @@
   display: inline-block;
   vertical-align: middle;
   text-decoration: none;
-  padding: 1em 2em;
+  padding: 1em 1em;
   color: @color_bright_text;
   border: 1px solid @color_hover;
   background-image: 
@@ -70,6 +70,7 @@ section {
 }
 
 section.promoted {
+  padding: 0;
   text-align: center;
 }
 
@@ -224,4 +225,360 @@ ul#features li svg {
   width: 4em;
   height: 4em;
   fill: @color_text;
+}
+
+/**
+ * Category page
+ */
+div#checkout_container,
+section.search,
+section.product_details,
+section.category {
+  text-align: center;
+  background-image: url(../images/mobile-inner.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+div#checkout_container,
+section.product_details {
+  min-height: auto;
+  background-image: none;
+}
+
+section.product_details {
+  padding: 0;
+}
+
+section.search h2,
+section.category h2 {
+  margin-top: 0;
+  text-align: center;
+  color: @color_bright_text;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+/**
+ * Product details
+ */
+div.gallery,
+div.detail {
+  display: block;
+  padding: 1em;
+  position: relative;
+}
+
+div.gallery {
+  padding-top: 350px;
+  background-color: @color_bright_text;
+}
+
+div.thumbnails {
+  display: block;
+  position: relative;
+}
+
+div.thumbnails img {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+div.thumbnails img:hover {
+  border: 1px solid @color_hover;
+}
+
+div.gallery img.big_image {
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+div.gallery img.big_image.visible {
+  opacity: 1;
+}
+
+div.detail {
+  background-color: @color_text;
+  color: @color_bright_text;
+}
+
+div.detail div.properties,
+div.detail div.information {
+  display: block;
+}
+
+div.detail div.information h2 {
+  margin: 0;
+  text-transform: uppercase;
+  color: @color_hover;
+  font-size: 2em;
+}
+
+div.detail div.information span.price {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+div.detail div.information span.price:after {
+  content: attr(data-currency);
+  display: inline-block;
+  padding: 0em 0.2em;
+}
+
+div.detail div.information a {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+}
+
+div.detail div.information a.action.buy {
+  padding: 1.1em 1em;
+}
+
+div.detail div.properties {
+  display: block;
+  margin-top: 1em;
+}
+
+div.detail div.properties svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  padding: 0.5em;
+  width: 4em;
+  height: 4em;
+  fill: @color_bright_text;
+  border: 1px solid fade(@color_bright_text, 30%);
+}
+
+/**
+ * Related items
+ */
+section.related_items {
+  text-align: center;
+}
+
+section.related_items h3 {
+  margin-top: 0;
+  color: @color_bright_text;
+}
+
+/**
+ * Dialogs
+ */
+
+div.dialog.login div.title {
+  padding: 0.3em;
+  background-color: @color_hover;
+  color: @color_text;
+}
+
+div.dialog.login div.content {
+  background-color: @color_background;
+  color: @color_bright_text;
+}
+
+div.dialog.login p {
+  margin: 0;
+  padding: 0.2em 0.3em;
+}
+
+div.dialog.login form {
+  padding: 0.3em;
+}
+
+div.dialog.login form a {
+  color: @color_bright_text;
+  font-weight: 700;
+}
+
+div.dialog.login form hr {
+  border-color: fade(@color_bright_text, 20%);
+}
+
+div.dialog.login label {
+  display: block;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+div.dialog.login label input {
+  padding: 0.4em 0.2em;
+  border: 1px solid @color_ac_bright_grey;
+  transition: all 0.3s;
+  width: calc(~'(100% - 0.4em - 2px)');
+}
+
+div.dialog.login label input[type="checkbox"] {
+  display: none;
+}
+
+div.dialog.login label input[type="checkbox"]:checked ~ span:before {
+  transform: scale(1);
+}
+
+div.dialog.login label span {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+div.dialog.login label span:before,
+div.dialog.login label span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  left: 102%;
+  width: 1em;
+  height: 1em;
+  border: 1px solid @color_ac_bright_grey;
+}
+
+div.dialog.login label span:before {
+  background-image: url(../images/check_mark.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1em 1em;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+html[dir="rtl"] div.dialog.login label span:before,
+html[dir="rtl"] div.dialog.login label span:after {
+  left: auto;
+  right: 102%;
+}
+
+div.dialog.login div.captcha {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div.dialog.login div.command_bar a {
+  padding: 0.5em 1em;
+  color: @color_bright_text;
+  background-color: transparent;
+  border-color: @color_dark_attention;
+  position: relative;
+  z-index: 0;
+}
+
+div.dialog.login div.command_bar a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+/**
+ * Checkout pages
+ */
+div#checkout_steps.input_details {
+  text-align: left;
+}
+
+html[dir="rtl"] div#checkout_steps.input_details {
+  text-align: right;
+}
+
+div#checkout_steps a {
+  display: block;
+  margin-bottom: 5px;
+  color: @color_bright_text;
+}
+
+div#checkout_steps a:before {
+  border-radius: 0;
+  background-color: fade(@color_hover, 90%);
+  border: 1px solid @color_hover;
+}
+
+div#checkout_steps a:hover:before {
+  background-color: @color_hover;
+}
+
+div#checkout_steps a.active:before {
+  background-color: @color_dark_attention;
+  border: 1px solid @color_dark_attention;
+}
+
+html[dir=rtl] div#checkout_steps a:not(:last-of-type):after {
+  border-right: 5px solid @color_hover;
+}
+
+div#input_details {
+  border-radius: 0;
+  border: none;
+}
+
+div#input_details h1 {
+  border-radius: 0;
+  padding: 0.5em;
+  background-color: linear-gradient(180deg, #332e2f 0%, #000000 100%);
+}
+
+div#input_details a {
+  color: @color_text;
+  font-weight: 700;
+}
+
+div#input_details label select, 
+div#input_details label input {
+  border-color: @color_ac_bright_grey;
+  border-radius: 0;
+}
+
+div#input_details label.radio input + span:before,
+div#input_details label.checkbox input + span:before {
+  border-radius: 0;
+}
+
+div.checkout_controls button,
+html[dir=rtl] div.checkout_controls button {
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  color: @color_bright_text;
+  border-color: @color_dark_attention;
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+}
+
+div.checkout_controls button:before,
+html[dir=rtl] div.checkout_controls button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-image: 
+    linear-gradient(180deg, @color_bright_attention 0%, @color_dark_attention 100%);
+  transition: all 0.3s;
+  z-index: -1;
 }

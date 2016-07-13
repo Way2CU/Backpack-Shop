@@ -1075,45 +1075,60 @@ Site.handle_product_thumbnail = function(event) {
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
-	if (Site.is_mobile())
+	if (Site.is_mobile()) {
 		Site.mobile_menu = new Caracal.MobileMenu();
 
-	// create user dialogs
-	Site.dialog_system = new Site.DialogSystem();
+		// create user dialogs
+		Site.dialog_system = new Site.DialogSystem();
 
-	// configure shopping cart
-	Site.cart = new Caracal.Shop.Cart();
-	Site.cart
-		.set_checkout_url('/shop/checkout')
-		.ui.add_item_list($('ul#products'))
-		.ui.add_total_count_label($('div.cart span.products_count'))
-		.ui.add_total_count_label($('div.cart div.total span.count'))
-		.ui.add_total_cost_label($('div.cart div.total span.price'))
-		.add_item_view(Site.ItemView);
+		// create function for rotating product big image on mobile
+		if(document.querySelector('section.product_details')) {
+			var product_thumbnails = document.querySelectorAll('img.thumbnail');
+			var big_image = document.querySelectorAll('img.big_image')[0].classList.add('visible');
+			for (var i = 0, count = product_thumbnails.length; i<count; i++) {
+				product_thumbnails[i].dataset.index = i;
+				product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
+			}
+		}
+	} else {
 
-	// create handler for add_to_cart button
-	if(document.querySelector('a.add')) {
-		var button_add_to_cart = document.querySelector('a.add');
-		button_add_to_cart.addEventListener('click', Site.handle_add_to_cart);
-	}
+		// create user dialogs
+		Site.dialog_system = new Site.DialogSystem();
 
-	// create function to open drop down menu
-	var menu = document.getElementById('main');
-	menu.addEventListener('click', Site.handle_menu_click);
+		// configure shopping cart
+		Site.cart = new Caracal.Shop.Cart();
+		Site.cart
+			.set_checkout_url('/shop/checkout')
+			.ui.add_item_list($('ul#products'))
+			.ui.add_total_count_label($('div.cart span.products_count'))
+			.ui.add_total_count_label($('div.cart div.total span.count'))
+			.ui.add_total_cost_label($('div.cart div.total span.price'))
+			.add_item_view(Site.ItemView);
 
-	// create pagecontrol for home page slider
-	Site.slider = new PageControl('div#slider', 'img');
-	Site.slider
-		.setWrapAround(true)
-		.attachControls('div#slider a');
+		// create handler for add_to_cart button
+		if(document.querySelector('a.add')) {
+			var button_add_to_cart = document.querySelector('a.add');
+			button_add_to_cart.addEventListener('click', Site.handle_add_to_cart);
+		}
 
-	// create function for rotating product big image
-	if(document.querySelector('section.product_details')) {
-		var product_thumbnails = document.querySelectorAll('img.thumbnail');
-		var big_image = document.querySelectorAll('img.big_image')[0].classList.add('visible');
-		for (var i = 0, count = product_thumbnails.length; i<count; i++) {
-			product_thumbnails[i].dataset.index = i;
-			product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
+		// create function to open drop down menu
+		var menu = document.getElementById('main');
+		menu.addEventListener('click', Site.handle_menu_click);
+
+		// create pagecontrol for home page slider
+		Site.slider = new PageControl('div#slider', 'img');
+		Site.slider
+			.setWrapAround(true)
+			.attachControls('div#slider a');
+
+		// create function for rotating product big image
+		if(document.querySelector('section.product_details')) {
+			var product_thumbnails = document.querySelectorAll('img.thumbnail');
+			var big_image = document.querySelectorAll('img.big_image')[0].classList.add('visible');
+			for (var i = 0, count = product_thumbnails.length; i<count; i++) {
+				product_thumbnails[i].dataset.index = i;
+				product_thumbnails[i].addEventListener('click', Site.handle_product_thumbnail);
+			}
 		}
 	}
 };
