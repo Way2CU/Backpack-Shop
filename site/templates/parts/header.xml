@@ -97,8 +97,11 @@
         <a href="javascript:void(0)" class="cart">
           <cms:svg file="site-sprite.svg" symbol="cart"/>
         </a>
+
         <!-- Mobile main menu -->
         <cms:template file="parts/main_menu.xml"/>
+        <!-- shopping cart -->
+        <cms:template file="stock/cart.xml"/>
       </div>
     </header>
   </cms:mobile>

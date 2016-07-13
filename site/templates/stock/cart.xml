@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../../units/schema/language.dtd">
 <document>
-	<div class="cart">
-    <cms:svg file="site-sprite.svg" symbol="cart"/>
-    <cms:text constant="title_cart"/>
-    <span class="products_count"></span>
+  <cms:desktop>
+    <div class="cart">
+        <cms:svg file="site-sprite.svg" symbol="cart"/>
+        <cms:text constant="title_cart"/>
+        <span class="products_count"></span>
 
-    <!-- List of product items -->
-    <div class="popup">
+      <!-- List of product items -->
+      <div class="popup">
 
+        <ul id="products"></ul>
+
+        <div class="total">
+          <span class="bold"><cms:text constant="label_cart_count"/></span>
+          <span class="count"></span>
+          <span class="bold"><cms:text constant="label_cart_price"/></span>
+          <span class="price"></span>
+          <a 
+            href="url_Make('checkout', 'shop')"
+            class="buy action"
+            cms:eval="href"
+            >
+            <cms:text constant="buy_now"/>
+          </a>
+        </div>
+      </div>
+    </div>
+  </cms:desktop>
+  <!-- Mobile cart -->
+  <cms:mobile>
+    <div class="cart">
       <ul id="products"></ul>
 
       <div class="total">
@@ -25,5 +47,5 @@
         </a>
       </div>
     </div>
-	</div>
+  </cms:mobile>
 </document>

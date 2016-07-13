@@ -5,6 +5,7 @@
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
  * Authors: Tal Reznic
  */
+
 header > div.mobile_title {
   padding: 0.2em 0em;
   background-image: linear-gradient(180deg, #332e2f 0%, #000 100%);
@@ -200,4 +201,106 @@ div.languages a {
   margin-left: 0.3em;
   padding: 0.5em 1em;
   border: 1px solid @color_dark_attention;
+}
+
+/**
+ * Mobile cart
+ */
+div.cart {
+  position: absolute;
+  top: 56px;
+  left: -100%;
+  width: 100%;
+  background-color: @color_bright_text;
+  z-index: 100;
+  transition: all 0.6s;
+}
+
+div.cart.active {
+  left: 0;
+  right: auto;
+}
+
+ul#products {
+  margin: 0;
+  padding: 0em;
+  list-style-type: none;
+}
+
+ul#products li.item {
+  background-color: @color_bright_text;
+  color: @color_text;
+}
+
+ul#products li.item span,
+ul#products li.item img {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.5em;
+}
+
+ul#products li.item > div {
+  display: block;
+  text-align: center;
+}
+
+ul#products li.item span.name {
+  font-weight: 700;
+}
+
+ul#products li.item span.total:after {
+  content: attr(data-currency);
+  display: inline-block;
+  padding: 0em 0.2em;
+}
+
+ul#products li.item > div a {
+  display: inline-block;
+  padding: 1em 0.5em;
+  cursor: pointer;
+}
+
+ul#products li.item > div a:hover {
+  background-color: transparent;
+}
+
+ul#products li.item > div a svg {
+  width: 1em;
+  height: 1em;
+  transition: all 0.3s;
+  fill: @color_text;
+}
+
+ul#products li.item > div a:hover svg {
+  fill: @color_dark_attention;
+}
+
+div.cart div.total {
+  padding-bottom: 0.5em;
+  background-color: @color_ac_light_grey;
+  color: @color_text;
+  border-top: 1px solid fade(@color_background, 20%);
+}
+
+div.cart div.total span {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 1em 0.5em;
+}
+
+div.cart div.total span.bold {
+  font-weight: 700;
+}
+
+div.cart div.total a.buy {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 0.5em 0em;
+  width: 150px;
+  color: @color_bright_text;
+  font-weight: 700;
+  border: 1px solid @color_dark_attention;
+  transition: all 0.3s;
 }
