@@ -738,6 +738,11 @@ html[dir=rtl] div.checkout_controls button:hover {
 @media only screen 
   and (min-device-width: 768px)
   and (max-device-width: 1024px) {
+
+.action {
+  padding: 1em 1em;
+}
+
 header {
   width: auto;
   left: 0;
@@ -746,6 +751,11 @@ header {
 
 header form {
   margin: 0 1em;
+}
+
+header form label input {
+  -webkit-border-radius:0px;
+  -webkit-appearance: none;
 }
 
 div.user a,
@@ -757,14 +767,69 @@ header > div a {
 header div.user {
   display: inline-block;
   vertical-align: middle;
-  float: none;
+  float: right;
 }
 
 section {
   padding: 1em calc(~'(100% - 960px)' / 2);
 }
 
-section.promoted {
+div.intro {
+  background-repeat: no-repeat;
+  background-position: center 45%, center top;
+  background-size: 35% auto, auto 100%;
+  min-height: 480px;
+  position: relative;
+}
+
+div.intro h1 {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  margin-left: -250px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 2em;
+  width: 500px;
+}
+
+div#slider {
+  height: 400px;
+  text-align: center;
+}
+
+div#slider a {
+  display: inline-block;
+  vertical-align: top;
+}
+
+div#slider img {
+  top: 100px;
+  left: 50%;
+  margin-left: -450px;
+}
+
+html[dir="rtl"] div#slider img {
+  left: auto;
+  right: 50%;
+  margin-left: 0;
+  margin-right: -450px;
+}
+
+ul#features li.triangle {
+  width: 300px;
+  min-height: 270px;
+  background-size: cover;
+}
+
+ul#features li p {
+  display: block;
+  width: 80%;
+}
+
+a.product:nth-of-type(1n) {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 html[dir="rtl"] a.product:nth-of-type(1n) {
@@ -775,6 +840,10 @@ html[dir="rtl"] a.product:nth-of-type(1n) {
 a.product {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+div.detail div.information a.action.buy {
+  padding: 1.1em 1em;
 }
 
 }
