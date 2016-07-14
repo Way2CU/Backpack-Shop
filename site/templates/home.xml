@@ -19,20 +19,19 @@
 			<div class="intro">
 				<h1><cms:text constant="title_header_slogan"/></h1>
 			</div>
-			<cms:desktop>
-				<section>
-					<div id="slider">
-						<!-- Slider images and controls -->
-						<cms:module
-							name="gallery"
-							action="show_image_list"
-							group="slider_images"
-							limit="3"
-							template="parts/slider.xml"
-							/>
-					</div>
-				</section>
-			</cms:desktop>
+
+			<section>
+				<div id="slider">
+					<!-- Slider images and controls -->
+					<cms:module
+						name="gallery"
+						action="show_image_list"
+						group="slider_images"
+						limit="3"
+						template="parts/slider.xml"
+						/>
+				</div>
+			</section>
 
 				<!-- Promoted products -->
 			<section class="promoted">
