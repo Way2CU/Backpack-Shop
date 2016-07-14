@@ -1,0 +1,7 @@
+<document>
+  <cms:markdown param="content" multilanguage="yes"/>
+  <img src="_BASEURL.'/site/images/case_logic.svg'"  alt="case-logic" cms:eval="src"/>
+  <img src="_BASEURL.'/site/images/dakine.svg'"  alt="dakine" cms:eval="src"/>
+  <img src="_BASEURL.'/site/images/thule.svg'"  alt="thule" cms:eval="src"/>
+  <img src="_BASEURL.'/site/images/joya.svg'"  alt="joya" cms:eval="src"/>
+</document>

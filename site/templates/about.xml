@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+  <cms:var name="_DOCTYPE"/>
+  <html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
+    <head>
+      <title>
+        <cms:text constant="site_title"/>
+        <cms:raw text=" - "/>
+        <cms:text constant="menu_about"/>
+      </title>
+      <cms:module name="shop" action="include_cart_scripts"/>
+      <cms:collection include="page_control,communicator,dialog"/>
+      <cms:script src="_BASEURL.'/site/scripts/floating_menu.js'" cms:eval="src"/>
+      <cms:module name="head_tag" action="print_tag"/>
+    </head>
+
+    <body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
+      <!-- Top section of site -->
+      <cms:template file="parts/header.xml"/>
+
+      <section class="about">
+        <h2><cms:text constant="title_about_page"/></h2>
+        <cms:module
+          name="articles"
+          action="show"
+          text_id="about"
+          template="parts/about_us.xml"
+          />
+      </section>
+
+      <!-- Bottom section of the site -->
+      <cms:template file="parts/footer.xml"/>
+    </body>
+  </html>
+</document>

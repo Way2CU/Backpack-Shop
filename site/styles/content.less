@@ -98,6 +98,10 @@ section {
   padding: 1em calc(~'(100% - 1200px)' / 2);
 }
 
+section.about {
+  padding: 1em calc(~'(100% - 960px)' / 2);
+}
+
 /**
  * Home page
  */
@@ -359,6 +363,7 @@ ul#features li svg {
  * Category page
  */
 div#checkout_container,
+section.about,
 section.search,
 section.product_details,
 section.category {
@@ -378,12 +383,34 @@ section.product_details {
   min-height: auto;
 }
 
+section.about {
+  min-height: auto;
+  color: @color_bright_text;
+}
+
+section.about h2,
 section.search h2,
 section.category h2 {
   text-align: center;
   color: @color_bright_text;
   font-size: 3em;
   text-transform: uppercase;
+}
+
+section.about h2 {
+  margin: 0;
+  padding: 0.5em 0em;
+  color: @color_hover;
+  text-transform: none;
+}
+
+section.about img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: 20%;
+  height: auto;
 }
 
 /**

@@ -13,7 +13,7 @@
           <cms:text constant="menu_home"/>
         </a>
         <a
-          class="$section == 'about' ? 'active' : false"
+          class="($action == '_default' and $section == 'about') ? 'active' : false"
           href="url_Make('_default', 'about')"
           cms:eval="href"
           cms:optional="class"
@@ -21,7 +21,7 @@
           <cms:text constant="menu_about"/>
         </a>
         <a
-          class="$section == 'about' ? 'active' : false"
+          class="$action == 'contact-us' ? 'active' : false"
           href="url_Make('contact-us', 'about')"
           cms:eval="href"
           cms:optional="class"
@@ -29,7 +29,7 @@
           <cms:text constant="menu_contact_us"/>
         </a>
         <a
-          class="$section == 'about' ? 'active' : false"
+          class="$action == 'terms-of-use' ? 'active' : false"
           href="url_Make('terms-of-use', 'about')"
           cms:eval="href"
           cms:optional="class"
@@ -37,7 +37,7 @@
           <cms:text constant="menu_terms_of_use"/>
         </a>
         <a
-          class="$section == 'about' ? 'active' : false"
+          class="$section == 'arrenty-agreement' ? 'active' : false"
           href="url_Make('warrenty-agreement', 'about')"
           cms:eval="href"
           cms:optional="class"
@@ -45,7 +45,7 @@
           <cms:text constant="menu_warranty_agreement"/>
         </a>
         <a
-          class="$section == 'about' ? 'active' : false"
+          class="$section == 'shipping-policy' ? 'active' : false"
           href="url_Make('shipping-policy', 'about')"
           cms:eval="href"
           cms:optional="class"
