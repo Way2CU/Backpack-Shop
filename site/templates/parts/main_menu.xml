@@ -78,103 +78,106 @@
           />
       </nav>
 
-      <!-- User links -->
-      <div class="user">
-        <cms:guest>
-          <a class="login" href="#">
-            <cms:svg file="site-sprite.svg" symbol="user"/>
-            <cms:text constant="menu_login"/>
-          </a>
-          <a class="sign-up" href="#">
-            <cms:svg file="site-sprite.svg" symbol="sign-up"/>
-            <cms:text constant="menu_signup"/>
-          </a>
-        </cms:guest>
+      <!-- Scrollable section of menu -->
+      <div class="scroll">
+        <!-- User links -->
+        <div class="user">
+          <cms:guest>
+            <a class="login" href="#">
+              <cms:svg file="site-sprite.svg" symbol="user"/>
+              <cms:text constant="menu_login"/>
+            </a>
+            <a class="sign-up" href="#">
+              <cms:svg file="site-sprite.svg" symbol="sign-up"/>
+              <cms:text constant="menu_signup"/>
+            </a>
+          </cms:guest>
 
-        <cms:user>
+          <cms:user>
+            <a
+              class="control_panel"
+              href="url_Make('', 'user')"
+              cms:eval="href"
+              >
+              <cms:svg file="site-sprite.svg" symbol="cog"/>
+              <cms:text constant="menu_account"/>
+            </a>
+            <a class="logout" href="#">
+              <cms:svg file="site-sprite.svg" symbol="enter"/>
+              <cms:text constant="menu_logout"/>
+            </a>
+          </cms:user>
+        </div>
+
+        <!-- Simple page links -->
+        <div class="main_links">
           <a
-            class="control_panel"
-            href="url_Make('', 'user')"
+            class="$section == 'home' ? 'active' : false"
+            href="url_Make('', 'home')"
             cms:eval="href"
+            cms:optional="class"
             >
-            <cms:svg file="site-sprite.svg" symbol="cog"/>
-            <cms:text constant="menu_account"/>
+            <cms:text constant="menu_home"/>
           </a>
-          <a class="logout" href="#">
-            <cms:svg file="site-sprite.svg" symbol="enter"/>
-            <cms:text constant="menu_logout"/>
+          <a
+            class="$section == 'about' ? 'active' : false"
+            href="url_Make('_default', 'about')"
+            cms:eval="href"
+            cms:optional="class"
+            >
+            <cms:text constant="menu_about"/>
           </a>
-        </cms:user>
-      </div>
+          <a
+            class="$section == 'about' ? 'active' : false"
+            href="url_Make('contact-us', 'about')"
+            cms:eval="href"
+            cms:optional="class"
+            >
+            <cms:text constant="menu_contact_us"/>
+          </a>
+          <a
+            class="$section == 'about' ? 'active' : false"
+            href="url_Make('terms-of-use', 'about')"
+            cms:eval="href"
+            cms:optional="class"
+            >
+            <cms:text constant="menu_terms_of_use"/>
+          </a>
+          <a
+            class="$section == 'about' ? 'active' : false"
+            href="url_Make('warrenty-agreement', 'about')"
+            cms:eval="href"
+            cms:optional="class"
+            >
+            <cms:text constant="menu_warranty_agreement"/>
+          </a>
+          <a
+            class="$section == 'about' ? 'active' : false"
+            href="url_Make('shipping-policy', 'about')"
+            cms:eval="href"
+            cms:optional="class"
+            >
+            <cms:text constant="menu_shipping_policy"/>
+          </a>
+        </div>
 
-      <!-- Simple page links -->
-      <div class="main_links">
-        <a
-          class="$section == 'home' ? 'active' : false"
-          href="url_Make('', 'home')"
+        <!-- Share link -->
+        <a 
+          href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" 
+          class="share"
           cms:eval="href"
-          cms:optional="class"
           >
-          <cms:text constant="menu_home"/>
+          <cms:svg file="site-sprite.svg" symbol="facebook"/>
+          <cms:text constant="label_share"/>
         </a>
-        <a
-          class="$section == 'about' ? 'active' : false"
-          href="url_Make('_default', 'about')"
-          cms:eval="href"
-          cms:optional="class"
-          >
-          <cms:text constant="menu_about"/>
-        </a>
-        <a
-          class="$section == 'about' ? 'active' : false"
-          href="url_Make('contact-us', 'about')"
-          cms:eval="href"
-          cms:optional="class"
-          >
-          <cms:text constant="menu_contact_us"/>
-        </a>
-        <a
-          class="$section == 'about' ? 'active' : false"
-          href="url_Make('terms-of-use', 'about')"
-          cms:eval="href"
-          cms:optional="class"
-          >
-          <cms:text constant="menu_terms_of_use"/>
-        </a>
-        <a
-          class="$section == 'about' ? 'active' : false"
-          href="url_Make('warrenty-agreement', 'about')"
-          cms:eval="href"
-          cms:optional="class"
-          >
-          <cms:text constant="menu_warranty_agreement"/>
-        </a>
-        <a
-          class="$section == 'about' ? 'active' : false"
-          href="url_Make('shipping-policy', 'about')"
-          cms:eval="href"
-          cms:optional="class"
-          >
-          <cms:text constant="menu_shipping_policy"/>
-        </a>
-      </div>
-
-      <!-- Share link -->
-      <a 
-        href="'https://www.facebook.com/sharer/sharer.php?u='.urlencode(url_Make('', 'home'))" 
-        class="share"
-        cms:eval="href"
-        >
-        <cms:svg file="site-sprite.svg" symbol="facebook"/>
-        <cms:text constant="label_share"/>
-      </a>
-      
-      <!-- Language menu -->
-      <div class="languages">
-        <cms:module
-          name="language_menu"
-          action="print"
-          />
+        
+        <!-- Language menu -->
+        <div class="languages">
+          <cms:module
+            name="language_menu"
+            action="print"
+            />
+        </div>
       </div>
     </nav>
   </cms:mobile>
