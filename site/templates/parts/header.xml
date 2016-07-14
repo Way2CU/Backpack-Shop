@@ -73,7 +73,15 @@
           template="parts/shop_category_links.xml"
           />
       </nav>
-
+      
+      <span class="ssl">
+        <img 
+          src="_BASEURL.'/site/images/ssl.png'"
+          alt="ssl"
+          cms:eval="src"
+          />
+        <cms:text constant="title_ssl"/>
+      </span>
       <!-- shopping cart -->
       <cms:template file="stock/cart.xml"/>
     </header>

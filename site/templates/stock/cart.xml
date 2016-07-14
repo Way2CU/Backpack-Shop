@@ -3,9 +3,9 @@
 <document>
   <cms:desktop>
     <div class="cart">
-        <cms:svg file="site-sprite.svg" symbol="cart"/>
-        <cms:text constant="title_cart"/>
-        <span class="products_count"></span>
+      <cms:svg file="site-sprite.svg" symbol="cart"/>
+      <cms:text constant="title_cart"/>
+      <span class="products_count"></span>
 
       <!-- List of product items -->
       <div class="popup">
