@@ -150,6 +150,31 @@ div#slider a:nth-of-type(3) {
   background-color: @color_ac_bright_grey;
 }
 
+div#slider a span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+div#slider a span.triangle:before {
+  left: -100%;
+}
+
+div#slider a span.triangle:after {
+  right: -100%;
+}
+
+div#slider a.active span.triangle:before {
+  left: 0%;
+  width: 1em;
+  height: 1em;
+}
+
+div#slider a.active span.triangle:after {
+  right: 0%;
+  width: 1em;
+  height: 1em;
+}
+
 /**
  * Product
  */
