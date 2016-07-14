@@ -1026,11 +1026,22 @@ Site.handle_add_to_cart = function(event) {
 	var cart = document.querySelector('div.cart');
 
 	// make cart blink
-	cart.classList.add('active');
-	setTimeout(function() {
-		cart.classList.remove('active');
-	}, 1000);
+	if(!Site.is_mobile()) {
+		cart.classList.add('active');
+		setTimeout(function() {
+			cart.classList.remove('active');
+		}, 1000);
+	}
 
+	// make cart blink on mobile version
+	if(Site.is_mobile()) {
+		var button_cart = document.querySelector('a.cart');
+		document.querySelector('a.cart').classList.add('blink');
+		setTimeout(function() {
+			button_cart.classList.remove('blink');
+		}, 1000);
+	}
+ 
 	// find item with same uid
 	var item_list = Site.cart.get_item_list_by_uid(uid);
 	var found_item = null;
