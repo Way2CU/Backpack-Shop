@@ -25,7 +25,7 @@
           name="articles"
           action="show"
           text_id="about"
-          template="parts/about_us.xml"
+          template="stock/article_generic.xml"
           />
       </section>
 
