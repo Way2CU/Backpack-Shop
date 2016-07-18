@@ -37,6 +37,7 @@
   transition: all 0.3s;
 }
 
+button,
 .action {
   display: inline-block;
   vertical-align: middle;
@@ -309,6 +310,8 @@ ul#features li svg {
  * Category page
  */
 div#checkout_container,
+section.contact,
+section.about,
 section.search,
 section.product_details,
 section.category {
@@ -317,6 +320,12 @@ section.category {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% auto;
+}
+
+section.contact,
+section.about {
+  padding: 0.5em;
+  text-align: inherit;
 }
 
 div#checkout_container,
@@ -329,6 +338,17 @@ section.product_details {
   padding: 0;
 }
 
+section.about article {
+  padding-bottom: 30px;
+  background-image: url(../images/backpacks-icons.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  color: @color_bright_text;
+}
+
+section.contact h2,
+section.about h2,
 section.search h2,
 section.category h2 {
   margin-top: 0;
@@ -336,6 +356,105 @@ section.category h2 {
   color: @color_bright_text;
   font-size: 1.5em;
   text-transform: uppercase;
+}
+
+section.contact h2,
+section.about h2 {
+  margin: 0;
+  padding: 0.5em 0em;
+  color: @color_hover;
+  text-transform: none;
+}
+
+/**
+ * Contact form
+ */
+div.contact h4 {
+  text-align: center;
+  color: @color_bright_text;
+}
+
+div.contact form label {
+  display: block;
+  padding: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+  color: @color_bright_text;
+  position: relative;
+}
+
+div.contact form label:before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  background-image: url(../images/form-icons.svg);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: 40px 160px;
+  width: 40px;
+  height: 40px;
+}
+
+html[dir="rtl"] div.contact form label:before {
+  left: auto;
+  right: 5px;
+}
+
+div.contact form label:nth-of-type(2):before {
+  background-position: 0px -40px;
+}
+
+div.contact form label:nth-of-type(3):before {
+  background-position: 0px -80px;
+}
+
+div.contact form label:last-of-type {
+  display: block;
+  width: 100%;
+}
+
+div.contact form label:last-of-type:before {
+  display: none;
+}
+
+div.contact form label span {
+  display: block;
+}
+
+div.contact form label input {
+  display: block;
+  box-sizing: border-box;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 35px;
+  background-color: @color_bright_text;
+  border: 1px solid @color_ac_bright_grey;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+html[dir="rtl"] div.contact form label input {
+  padding-left: 0px;
+  padding-right: 35px;
+}
+
+div.contact form label textarea {
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid @color_ac_bright_grey;
+  width: 100%;
+  resize: vertical;
+  background-color: @color_bright_text;
+  transition: all 0.3s;
+}
+
+div.contact form div.controls {
+  text-align: center;
+}
+
+div.contact form div.controls button {
+  background-color: @color_background;
 }
 
 /**
