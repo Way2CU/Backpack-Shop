@@ -1062,9 +1062,18 @@ Site.handle_add_to_cart = function(event) {
 }
 
 /*
- * Handle clicking on nav#main
+ * Handle closing drop down menu and shopping cart when clicking on document
  */
-Site.handle_menu_click = function(event) {
+Site.handle_clicking_outside = function() {
+	var item = this;
+	if(item.className == 'show' || item.className == "cart show") 
+		item.classList.remove('show');
+}
+
+/*
+ * Handle toggeling class - show 
+ */
+Site.handle_toggle_class = function(event) {
 	this.classList.toggle('show');
 }
 
@@ -1115,11 +1124,18 @@ Site.on_load = function() {
 		button_add_to_cart.addEventListener('click', Site.handle_add_to_cart);
 	}
 
-	// create function to open drop down menu
+	// create function to toggle class of main menu and shopping cart
 	if(!Site.is_mobile()) {
 		var menu = document.getElementById('main');
-		menu.addEventListener('click', Site.handle_menu_click);
+		var cart = document.querySelector('div.cart');
+		menu.addEventListener('click', Site.handle_toggle_class);
+		cart.addEventListener('click', Site.handle_toggle_class);
+
+		// create handler for closing drop down menu and shopping cart when clicking on document
+		$('nav#main,div.cart').bind('clickoutside',Site.handle_clicking_outside);
 	}
+
+
 
 	// create pagecontrol for home page slider
 	Site.slider = new PageControl('div#slider', 'img');
