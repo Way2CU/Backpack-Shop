@@ -1,5 +1,6 @@
 {
     "site_title": "Backpack Site",
+    "send": "Contact me",
     "menu_home": "Home",
     "menu_about": "About us",
     "menu_contact_us": "Contact us",
@@ -18,6 +19,8 @@
     "title_search": "Search results: ",
     "title_checkout": "Checkout",
     "title_about_page": "Backpacks - Company profile",
+    "title_contact_us": "For more information contact us",
+    "title_form": "Interested in contacting us? fill in the form below",
     "buy_now": "Order now",
     "button_add_to_cart": "Add to cart",
     "label_cart_price": "Total price:",

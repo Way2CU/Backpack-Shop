@@ -1,5 +1,6 @@
 {
     "site_title": "Backpack Site",
+    "send": "חזרו אליי",
     "menu_home": "עמוד הבית",
     "menu_about": "אודותינו",
     "menu_contact_us": "צור קשר",
@@ -18,6 +19,8 @@
     "title_search": "תוצאת חיפוש: ",
     "title_checkout": "רכישה",
     "title_about_page": "Backpacks - פרופיל החברה",
+    "title_contact_us": "יצירת קשר לשאלות ובירורים",
+    "title_form": "רוצים שנחזור אלייכם? מלאו את הטופס",
     "buy_now": "קנה עכשיו",
     "button_add_to_cart": "הוסף לסל",
     "label_cart_price": "מחיר סופי:",

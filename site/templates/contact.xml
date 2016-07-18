@@ -7,14 +7,8 @@
       <title>
         <cms:text constant="site_title"/>
         <cms:raw text=" - "/>
-        <cms:text constant="menu_about"/>
+        <cms:text constant="menu_contact_us"/>
       </title>
-      <!-- Page description -->
-      <cms:module
-        name="page_info"
-        action="set_description"
-        article="about"
-        />
       <cms:module name="shop" action="include_cart_scripts"/>
       <cms:collection include="page_control,communicator,dialog"/>
       <cms:script src="_BASEURL.'/site/scripts/floating_menu.js'" cms:eval="src"/>
@@ -25,14 +19,16 @@
       <!-- Top section of site -->
       <cms:template file="parts/header.xml"/>
 
-      <section class="about">
-        <h2><cms:text constant="title_about_page"/></h2>
-        <cms:module
-          name="articles"
-          action="show"
-          text_id="about"
-          template="stock/article_generic.xml"
-          />
+      <section class="contact">
+        <h2><cms:text constant="title_contact_us"/></h2>
+        <div class="contact">
+          <h4><cms:text constant="title_form"/></h4>
+          <cms:module
+            name="contact_form"
+            action="show"
+            text_id="contact"
+            />
+        </div>
       </section>
 
       <!-- Bottom section of the site -->
