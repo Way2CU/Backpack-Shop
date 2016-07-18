@@ -181,13 +181,9 @@ nav#main:before {
   z-index: -1;
 }
 
+nav#main.show:before,
 nav#main:hover:before {
   opacity: 1;
-}
-
-nav#main.show {
-  background-color: @color_dark_attention;
-  transition-delay: 0s;
 }
 
 nav#main div.drop_down {
@@ -327,8 +323,12 @@ div.cart {
   background-color: transparent;
   transition: all 0.3s;
   position: relative;
-  cursor: default;
+  cursor: pointer;
   z-index: 0;
+}
+
+div.cart.show {
+  color: @color_bright_text;
 }
 
 div.cart.active:after {
@@ -355,6 +355,7 @@ div.cart:before {
   z-index: -1;
 }
 
+div.cart.show:before,
 div.cart:hover:before {
   opacity: 1;
 }
@@ -369,6 +370,7 @@ div.cart svg {
   transition: all 0.3s;
 }
 
+div.cart.show svg,
 div.cart:hover svg {
   fill: @color_bright_text;
 }
@@ -382,11 +384,17 @@ div.cart > span {
   transition: all 0.3s;
 }
 
+div.cart.show > span {
+  color: @color_bright_text;
+  border: 1px solid @color_bright_text;
+}
+
 html[dir="rtl"] div.cart > span {
   margin-left: 0;
   margin-right: 0.4em;
 }
 
+div.cart.show:hover > span,
 div.cart:hover > span {
   color: @color_bright_text;
   border-color: @color_bright_text;
@@ -414,7 +422,7 @@ html[dir="rtl"] div.popup {
   left: 0;
 }
 
-div.cart:hover div.popup {
+div.cart.show div.popup {
   min-height: 500px;
   visibility: visible;
   opacity: 1;
