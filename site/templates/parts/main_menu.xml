@@ -37,8 +37,8 @@
           <cms:text constant="menu_terms_of_use"/>
         </a>
         <a
-          class="$section == 'arrenty-agreement' ? 'active' : false"
-          href="url_Make('warrenty-agreement', 'about')"
+          class="$section == 'warranty-agreement' ? 'active' : false"
+          href="url_Make('warranty-agreement', 'about')"
           cms:eval="href"
           cms:optional="class"
           >
