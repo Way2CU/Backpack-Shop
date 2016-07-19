@@ -483,7 +483,7 @@ div.contact form label input {
   padding-top: 0.6em;
   padding-bottom: 0.6em;
   padding-left: 35px;
-  background-color: fade(@color_bright_text, 70%);
+  background-color: @color_bright_text;
   border: 1px solid @color_ac_bright_grey;
   width: 100%;
   transition: all 0.3s;
@@ -491,12 +491,12 @@ div.contact form label input {
 
 div.contact form label textarea:hover,
 div.contact form label input:hover {
-  border-color: @color_hover;
+  border-color: fade(@color_hover, 50%);
 }
 
 div.contact form label textarea:focus,
 div.contact form label input:focus {
-  background-color: @color_bright_text;
+  border-color: @color_hover;
 }
 
 html[dir="rtl"] div.contact form label input {
@@ -510,7 +510,7 @@ div.contact form label textarea {
   border: 1px solid @color_ac_bright_grey;
   width: 100%;
   resize: vertical;
-  background-color: fade(@color_bright_text, 70%);
+  background-color: @color_bright_text;
   transition: all 0.3s;
 }
 
