@@ -1066,7 +1066,7 @@ Site.handle_add_to_cart = function(event) {
  */
 Site.handle_clicking_outside = function() {
 	var item = this;
-	if(item.className == 'show' || item.className == "cart show") 
+	if(item.classList.contains('show'))
 		item.classList.remove('show');
 }
 
